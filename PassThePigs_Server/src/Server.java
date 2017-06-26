@@ -43,7 +43,9 @@ public class Server {
 class Uczestnik extends Thread {
     static Vector<Uczestnik> uczestnicy = new Vector<Uczestnik>(); // definicja zmiennej przechowującej wszystkich uczestnikow;
     static int polaczeniGracze = 0;  //definicja zmiennej przechowującej ilość podłączonych uczestników
+    static int aktualnyUczestnik = 1;
     int maxIloscGraczy;
+    int numerWKolejce;
 
     private Socket socket; // deklaracja socketu dla połączenia z uczestnikiem
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
@@ -55,10 +57,16 @@ class Uczestnik extends Thread {
         this.maxIloscGraczy = maxIloscGraczy;
     }
 
+    public void ustawNumerWKolejce(int numerWKolejce)
+    {
+        this.numerWKolejce=numerWKolejce;
+    }
+
+
     private void wyslijDoWszystkich(String tekst) { // metoda wysyłająca dane do wszytkich obecnych
         for (Uczestnik uczestnik : uczestnicy) { // dla uczestników z listy uczestników
             synchronized(uczestnicy) { // synchronizowane działanie (może być robione tylko przez jeden wątek na raz)
-                if (uczestnik != this)  // jeżeli gra nie jest bieżącą grą
+           //     if (uczestnik != this)  // jeżeli gra nie jest bieżącą grą
                     uczestnik.out.println("<" + nick + ">" + tekst); //do wszystkich innych wysyłamy napisany tekst
             }
         }
@@ -87,23 +95,38 @@ class Uczestnik extends Thread {
 
             if ((polaczeniGracze < maxIloscGraczy)) {     // jeżeli ilość połączonych uczestników jest mniejsza niż ich maksymalna ilość
                 polaczeniGracze++;  // zwiększamy ilość połączonych graczy o 1
+                ustawNumerWKolejce(polaczeniGracze); //przypisujemy graczowi numer w kolejce;
+
                 out.println("Połączony z serwerem. Komenda /end kończy połączenie.");   // to wysyłamy do klienta
                 out.println("Podaj swój nick: ");                                       // to też
                 nick = in.readLine();                                                   // odbieramy od klienta nick
                 System.out.println("Do gry dołączył: " + nick);                         // to wyświetlamy na serwerze
                 System.out.println("Połączonych graczy: " + polaczeniGracze);           // to też
                 wyslijDoWszystkich("Pojawił się w grze");                         // wysyłamy do wszystkich
-                users();                                                                 // wyświetlamy klientowi info o użytkownikach
-                while (!(linia = in.readLine()).equalsIgnoreCase("/end")) { //dopóki klient nie wpisze /end
-                    wyslijDoWszystkich(linia);                                          // to co napisał wysyłamy do wszystkich
+                users();                                                                // wyświetlamy klientowi info o użytkownikach
+
+                while (!(linia = in.readLine()).equalsIgnoreCase("/q"))
+                {
+                    if (numerWKolejce == aktualnyUczestnik ) {
+                        if (!(linia.equalsIgnoreCase("/r") && !(linia).equalsIgnoreCase("/q")))
+                        {
+                            wyslijDoWszystkich(linia);
+                        }
+                        else {
+                            if (linia.equalsIgnoreCase("/r"))
+                            {
+                                aktualnyUczestnik++;
+                            }
+                        }
+
+                    }
                 }
-                wyslijDoWszystkich("Opuścił grę");                              // jeżeli wpisał /end to opuszcza grę
+                wyslijDoWszystkich("O`uścił grę");                              // jeżeli wpisał /end to opuszcza grę
                 System.out.println("Grę opuścił: " + nick);
             }
             else {
-                out.println("Serwer jest pełny!  /end kończy połączenie. ");   // to wysyłamy do klienta
-               while (!(linia = in.readLine()).equalsIgnoreCase("/end")) { // czekamy aż użytkownik wpisze /end
-
+                out.println("Serwer jest pełny! Możesz się przyglądać grze. Komenda /q kończy połączenie.");   // to wysyłamy do klienta
+                while (!(linia = in.readLine()).equalsIgnoreCase("/q")) { // czekamy aż użytkownik wpisze /q
                 }
             }
 
