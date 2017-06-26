@@ -13,13 +13,13 @@ public class Server {
     private static final  int PORT = 22; // definicja portu, na którym nasłuchuje serwer
 
     public static void main(String args[]){
-        int iloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
+        int maxIloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
 
-        while (iloscGraczy < 1 || iloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 1 do 5
+        while (maxIloscGraczy < 1 || maxIloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 1 do 5
         {
             System.out.print("Podaj ilość graczy (od 1 do 5):");  // serwer prosi o jej wprowadzenie
             Scanner sc = new Scanner(System.in);
-            if (sc.hasNextInt()) iloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej iloscGraczy jeśli jest liczbą całkowitą
+            if (sc.hasNextInt()) maxIloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej maxIloscGraczy jeśli jest liczbą całkowitą
         }
         try
         {
@@ -28,11 +28,9 @@ public class Server {
 
             while (true){
                 Socket socket = server.accept(); // włączenie akceptowania nowego połączenia
-
                 InetAddress addr = socket.getInetAddress(); // definicja zmiennej przechowującej adres połączonego klienta
                 System.out.println("Połączenie z adresu: "+ addr.getHostName() + " [" + addr.getHostAddress() + "]");
-
-                new Uczestnik(socket).start(); // uruchomienie obsługi gry dla uczestnika
+                new Uczestnik(socket, maxIloscGraczy).start(); // uruchomienie obsługi gry dla uczestnika
             }
 
         } catch (IOException e) {
@@ -41,15 +39,20 @@ public class Server {
     }
 }
 
+
 class Uczestnik extends Thread {
     static Vector<Uczestnik> uczestnicy = new Vector<Uczestnik>(); // definicja zmiennej przechowującej wszystkich uczestnikow;
+    static int polaczeniGracze = 0;  //definicja zmiennej przechowującej ilość podłączonych uczestników
+    int maxIloscGraczy;
+
     private Socket socket; // deklaracja socketu dla połączenia z uczestnikiem
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
     private PrintWriter out; // deklaracja strumienia danych wysyłanych do uczestnika
     private String nick; // deklaracja nazwy uczestnika
 
-    public Uczestnik(Socket socket) { // konstruktor obsługi nowego połączenia - tworzy się go podając socket)
+    public Uczestnik(Socket socket, int maxIloscGraczy) { // konstruktor obsługi nowego połączenia)
         this.socket = socket;
+        this.maxIloscGraczy = maxIloscGraczy;
     }
 
     private void wyslijDoWszystkich(String tekst) { // metoda wysyłająca dane do wszytkich obecnych
@@ -78,21 +81,31 @@ class Uczestnik extends Thread {
             uczestnicy.add(this); // dodanie bieżącego uczestnika do listy uczestników
         }
         try {
-            in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
-            out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
 
-            out.println("Połączony z serwerem. Komenda /end kończy połączenie.");   // to wysyłamy do klienta
-            out.println("Podaj swój nick: ");                                       // to też
-            nick = in.readLine();                                                   // odbieramy od klienta nick
-            System.out.println("Do gry dołączył: " + nick);
-            wyslijDoWszystkich("Pojawił się w grze");                      // wysyłamy do wszystkich
-            users();                                                                 // wyświetlamy klientowi info o użytkownikach
-            while (!(linia = in.readLine()).equalsIgnoreCase("/end")){ //dopóki klient nie wpisze /end
-                wyslijDoWszystkich(linia);                                          // to co napisał wysyłamy do wszystkich
+                in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
+                out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
+
+            if ((polaczeniGracze < maxIloscGraczy)) {     // jeżeli ilość połączonych uczestników jest mniejsza niż ich maksymalna ilość
+                polaczeniGracze++;  // zwiększamy ilość połączonych graczy o 1
+                out.println("Połączony z serwerem. Komenda /end kończy połączenie.");   // to wysyłamy do klienta
+                out.println("Podaj swój nick: ");                                       // to też
+                nick = in.readLine();                                                   // odbieramy od klienta nick
+                System.out.println("Do gry dołączył: " + nick);                         // to wyświetlamy na serwerze
+                System.out.println("Połączonych graczy: " + polaczeniGracze);           // to też
+                wyslijDoWszystkich("Pojawił się w grze");                         // wysyłamy do wszystkich
+                users();                                                                 // wyświetlamy klientowi info o użytkownikach
+                while (!(linia = in.readLine()).equalsIgnoreCase("/end")) { //dopóki klient nie wpisze /end
+                    wyslijDoWszystkich(linia);                                          // to co napisał wysyłamy do wszystkich
+                }
+                wyslijDoWszystkich("Opuścił grę");                              // jeżeli wpisał /end to opuszcza grę
+                System.out.println("Grę opuścił: " + nick);
             }
-            wyslijDoWszystkich("Opuścił grę");                              // jeżeli wpisał /end to opuszcza grę
+            else {
+                out.println("Serwer jest pełny!  /end kończy połączenie. ");   // to wysyłamy do klienta
+               while (!(linia = in.readLine()).equalsIgnoreCase("/end")) { // czekamy aż użytkownik wpisze /end
 
-            System.out.println("Grę opuścił: " + nick);
+                }
+            }
 
         } catch (IOException e) {
             e.printStackTrace();
