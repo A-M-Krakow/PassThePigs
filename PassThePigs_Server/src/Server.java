@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Scanner;
 import java.util.Vector;
 
 /**
@@ -12,6 +13,14 @@ public class Server {
     private static final  int PORT = 22; // definicja portu, na którym nasłuchuje serwer
 
     public static void main(String args[]){
+        int iloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
+
+        while (iloscGraczy < 1 || iloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 1 do 5
+        {
+            System.out.print("Podaj ilość graczy (od 1 do 5):");  // serwer prosi o jej wprowadzenie
+            Scanner sc = new Scanner(System.in);
+            if (sc.hasNextInt()) iloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej iloscGraczy jeśli jest liczbą całkowitą
+        }
         try
         {
             server = new ServerSocket(PORT); // definicja socketu serwera na odpowiednim porcie
