@@ -15,9 +15,9 @@ public class Server {
     public static void main(String args[]){
         int maxIloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
 
-        while (maxIloscGraczy < 1 || maxIloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 1 do 5
+        while (maxIloscGraczy < 2 || maxIloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 1 do 5
         {
-            System.out.print("Podaj ilość graczy (od 1 do 5):");  // serwer prosi o jej wprowadzenie
+            System.out.print("Podaj ilość graczy (od 2 do 5):");  // serwer prosi o jej wprowadzenie
             Scanner sc = new Scanner(System.in);
             if (sc.hasNextInt()) maxIloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej maxIloscGraczy jeśli jest liczbą całkowitą
         }
@@ -43,7 +43,7 @@ public class Server {
 class Uczestnik extends Thread {
     static Vector<Uczestnik> uczestnicy = new Vector<Uczestnik>(); // definicja zmiennej przechowującej wszystkich uczestnikow;
     static int polaczeniGracze = 0;  //definicja zmiennej przechowującej ilość podłączonych uczestników
-    static int aktualnyUczestnik = 1;
+    static Uczestnik aktualnyUczestnik;
     int maxIloscGraczy;
     int numerWKolejce;
 
@@ -55,11 +55,6 @@ class Uczestnik extends Thread {
     public Uczestnik(Socket socket, int maxIloscGraczy) { // konstruktor obsługi nowego połączenia)
         this.socket = socket;
         this.maxIloscGraczy = maxIloscGraczy;
-    }
-
-    public void ustawNumerWKolejce(int numerWKolejce)
-    {
-        this.numerWKolejce=numerWKolejce;
     }
 
 
@@ -85,47 +80,42 @@ class Uczestnik extends Thread {
 
     public void run() {
         String linia; // deklaracja napisu wpisanego przez użytkownika
-        synchronized (uczestnicy) { //synchronizowane działanie
-            uczestnicy.add(this); // dodanie bieżącego uczestnika do listy uczestników
-        }
+
         try {
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
+            out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
 
-                in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
-                out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
-
-            if ((polaczeniGracze < maxIloscGraczy)) {     // jeżeli ilość połączonych uczestników jest mniejsza niż ich maksymalna ilość
-                polaczeniGracze++;  // zwiększamy ilość połączonych graczy o 1
-                ustawNumerWKolejce(polaczeniGracze); //przypisujemy graczowi numer w kolejce;
+            if (uczestnicy.size() < maxIloscGraczy) {
+                synchronized (uczestnicy) { //synchronizowane działanie
+                    uczestnicy.add(this); // dodanie bieżącego uczestnika do listy uczestników
+                    if (uczestnicy.size() == 1) aktualnyUczestnik = this;
+                }
 
                 out.println("Połączony z serwerem. Komenda /end kończy połączenie.");   // to wysyłamy do klienta
                 out.println("Podaj swój nick: ");                                       // to też
                 nick = in.readLine();                                                   // odbieramy od klienta nick
                 System.out.println("Do gry dołączył: " + nick);                         // to wyświetlamy na serwerze
-                System.out.println("Połączonych graczy: " + polaczeniGracze);           // to też
+                System.out.println("Połączonych klientów: " + uczestnicy.size());      // to też
                 wyslijDoWszystkich("Pojawił się w grze");                         // wysyłamy do wszystkich
                 users();                                                                // wyświetlamy klientowi info o użytkownikach
 
-                while (!(linia = in.readLine()).equalsIgnoreCase("/q"))
-                {
-                    if (numerWKolejce == aktualnyUczestnik ) {
-                        if (!(linia.equalsIgnoreCase("/r") && !(linia).equalsIgnoreCase("/q")))
-                        {
+                while (!(linia = in.readLine()).equalsIgnoreCase("/q")) {
+                    if (aktualnyUczestnik == this) {
+                        if (!(linia.equalsIgnoreCase("/r"))) {
                             wyslijDoWszystkich(linia);
+                        } else {
+                            if (!(uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
+                                aktualnyUczestnik = uczestnicy.get(uczestnicy.indexOf(this) + 1);
+                            } else aktualnyUczestnik = uczestnicy.get(0);
                         }
-                        else {
-                            if (linia.equalsIgnoreCase("/r"))
-                            {
-                                aktualnyUczestnik++;
-                            }
-                        }
-
                     }
                 }
-                wyslijDoWszystkich("O`uścił grę");                              // jeżeli wpisał /end to opuszcza grę
+
+                wyslijDoWszystkich("Opuścił grę");                              // jeżeli wpisał /q to opuszcza grę
                 System.out.println("Grę opuścił: " + nick);
             }
             else {
-                out.println("Serwer jest pełny! Możesz się przyglądać grze. Komenda /q kończy połączenie.");   // to wysyłamy do klienta
+                out.println("Serwer jest pełny! Komenda /q kończy połączenie.");   // to wysyłamy do klienta
                 while (!(linia = in.readLine()).equalsIgnoreCase("/q")) { // czekamy aż użytkownik wpisze /q
                 }
             }
