@@ -88,7 +88,7 @@ class Uczestnik extends Thread {
         out.println("[enter] - rzucaj");
         out.println("/p - punkty");
         out.println("/r - rezygnuj\n");
-        wyslijDoInnych(this, " Zdobył punkt!");
+        wyslijDoInnych(this, this.nick + " +1 punkt!");
     }
 
     private void pokazPunkty() {
@@ -152,12 +152,10 @@ class Uczestnik extends Thread {
 
     private synchronized  void ustawAktualnego(int numerAktualnego) {
         aktualnyUczestnik = uczestnicy.get(numerAktualnego) ;
-        wyslijDoJednego(uczestnicy.get(numerAktualnego), "TWOJA KOLEJ!");
+        wyslijDoJednego(uczestnicy.get(numerAktualnego), "\n\nTWOJA KOLEJ!\n\n");
         wyslijDoJednego(uczestnicy.get(numerAktualnego), "[enter] - rzucaj");
         wyslijDoJednego(uczestnicy.get(numerAktualnego),"/r - rezygnuj");
-
-
-        wyslijDoInnych(aktualnyUczestnik, "Teraz rzuca: " + aktualnyUczestnik.nick);
+        wyslijDoInnych(aktualnyUczestnik, "\n\nTeraz rzuca: " + aktualnyUczestnik.nick + "\n\n");
         wyslijDoWszystkich("/p - punkty");
         wyslijDoWszystkich("/q - wyjscie");
     }
@@ -196,9 +194,7 @@ class Uczestnik extends Thread {
                     ustawAktualnego(ktoZacznie);
                 }
 
-
-
-
+                
 
                     while ((linia = in.readLine()) != null) {
                         if (linia.equalsIgnoreCase("/q")) {
