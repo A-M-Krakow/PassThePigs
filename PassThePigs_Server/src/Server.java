@@ -168,15 +168,12 @@ class Uczestnik extends Thread {
         try {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
+            out.println("Połączony z serwerem. Komenda /q kończy połączenie.");   // to wysyłamy do klienta
+            out.println("Podaj swój nick: ");                                       // to też
+            nick = in.readLine();                                                   // odbieramy od klienta nick
 
             if (uczestnicy.size() < maxIloscGraczy) {
-
-                out.println("Połączony z serwerem. Komenda /q kończy połączenie.");   // to wysyłamy do klienta
-                out.println("Podaj swój nick: ");                                       // to też
-                nick = in.readLine();                                                   // odbieramy od klienta nick
-
                 dolaczDoGry();
-
                 if (uczestnicy.size() == 1)
                 {
                   pierwszy = true;
@@ -194,7 +191,7 @@ class Uczestnik extends Thread {
                     ustawAktualnego(ktoZacznie);
                 }
 
-                
+
 
                     while ((linia = in.readLine()) != null) {
                         if (linia.equalsIgnoreCase("/q")) {
