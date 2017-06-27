@@ -45,7 +45,6 @@ class Uczestnik extends Thread {
     static int polaczeniGracze = 0;  //definicja zmiennej przechowującej ilość podłączonych uczestników
     static Uczestnik aktualnyUczestnik;
     int maxIloscGraczy;
-    int numerWKolejce;
 
     private Socket socket; // deklaracja socketu dla połączenia z uczestnikiem
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
@@ -99,20 +98,28 @@ class Uczestnik extends Thread {
                 wyslijDoWszystkich("Pojawił się w grze");                         // wysyłamy do wszystkich
                 users();                                                                // wyświetlamy klientowi info o użytkownikach
 
-                while (!(linia = in.readLine()).equalsIgnoreCase("/q")) {
-                    if (aktualnyUczestnik == this) {
-                        if (!(linia.equalsIgnoreCase("/r"))) {
-                            wyslijDoWszystkich(linia);
-                        } else {
-                            if (!(uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
-                                aktualnyUczestnik = uczestnicy.get(uczestnicy.indexOf(this) + 1);
-                            } else aktualnyUczestnik = uczestnicy.get(0);
+
+                    while ((linia = in.readLine()) != null) {
+                        if (!linia.equalsIgnoreCase("/q")) {
+                            if (aktualnyUczestnik == this) {
+                                if ((linia.equalsIgnoreCase("/r"))) {
+                                    if ((uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
+                                        aktualnyUczestnik = uczestnicy.get(0);
+                                    } else {
+                                        aktualnyUczestnik = uczestnicy.get(uczestnicy.indexOf(this) + 1);
+                                    }
+                                } else {
+                                    wyslijDoWszystkich(linia);
+                                }
+                            }
                         }
                     }
-                }
+
+
 
                 wyslijDoWszystkich("Opuścił grę");                              // jeżeli wpisał /q to opuszcza grę
                 System.out.println("Grę opuścił: " + nick);
+
             }
             else {
                 out.println("Serwer jest pełny! Komenda /q kończy połączenie.");   // to wysyłamy do klienta
@@ -131,7 +138,14 @@ class Uczestnik extends Thread {
                 e.printStackTrace();
             }finally {
                 synchronized(uczestnicy) {
+                    if ((uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
+                        aktualnyUczestnik = uczestnicy.get(0);
+                    } else {
+                        aktualnyUczestnik = uczestnicy.get(uczestnicy.indexOf(this) + 1);
+                    }
                     uczestnicy.removeElement(this); // usunięcie bieżącego uczestnika z listy uczestników
+                    maxIloscGraczy--;
+
                 }
             }
         }
