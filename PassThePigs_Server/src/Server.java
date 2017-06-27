@@ -15,7 +15,7 @@ public class Server {
     public static void main(String args[]){
         int maxIloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
 
-        while (maxIloscGraczy < 2 || maxIloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 1 do 5
+        while (maxIloscGraczy < 2 || maxIloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 2 do 5
         {
             System.out.print("Podaj ilość graczy (od 2 do 5):");  // serwer prosi o jej wprowadzenie
             Scanner sc = new Scanner(System.in);
@@ -94,13 +94,15 @@ class Uczestnik extends Thread {
                 out.println("Podaj swój nick: ");                                       // to też
                 nick = in.readLine();                                                   // odbieramy od klienta nick
                 System.out.println("Do gry dołączył: " + nick);                         // to wyświetlamy na serwerze
-                System.out.println("Połączonych klientów: " + uczestnicy.size());      // to też
+                System.out.println("Połączonych graczy: " + uczestnicy.size()+ "/" + maxIloscGraczy);      // to też
                 wyslijDoWszystkich("Pojawił się w grze");                         // wysyłamy do wszystkich
                 users();                                                                // wyświetlamy klientowi info o użytkownikach
 
 
                     while ((linia = in.readLine()) != null) {
-                        if (!linia.equalsIgnoreCase("/q")) {
+                        if (linia.equalsIgnoreCase("/q")) {
+                            break;
+                        } else {
                             if (aktualnyUczestnik == this) {
                                 if ((linia.equalsIgnoreCase("/r"))) {
                                     if ((uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
@@ -123,7 +125,8 @@ class Uczestnik extends Thread {
             }
             else {
                 out.println("Serwer jest pełny! Komenda /q kończy połączenie.");   // to wysyłamy do klienta
-                while (!(linia = in.readLine()).equalsIgnoreCase("/q")) { // czekamy aż użytkownik wpisze /q
+                while ((linia = in.readLine())!= null) {
+                    if (linia.equalsIgnoreCase("/q")) break;
                 }
             }
 
