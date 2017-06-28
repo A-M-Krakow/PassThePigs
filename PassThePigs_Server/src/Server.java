@@ -40,7 +40,6 @@ public class Server {
     }
 }
 
-
 class Uczestnik extends Thread {
     static Vector<Uczestnik> uczestnicy = new Vector<Uczestnik>(); // definicja zmiennej przechowującej wszystkich uczestnikow;
     static int polaczeniGracze = 0;  //definicja zmiennej przechowującej ilość podłączonych uczestników
@@ -60,6 +59,54 @@ class Uczestnik extends Thread {
         {
         this.maxIloscGraczy = maxIloscGraczy; }
     }
+
+    class Rzut {
+
+        String [] ulozeniaFigurek = new String[2];
+        boolean stykajaSie = false;
+        String[] mozliweUlozenia = {
+                "ucho",
+                "ryjek",
+                "nogi",
+                "plecy",
+                "prawy bok",
+                "lewy bok"
+        };
+
+        public Rzut() {
+            ulozeniaFigurek[0] = mozliweUlozenia[2];
+            ulozeniaFigurek[1] =  mozliweUlozenia[5];
+
+            int losowanie;
+         for (int i=0; i<ulozeniaFigurek.length; i++) {
+                losowanie = (int) (Math.random() * 100);
+                if (losowanie >= 0 && losowanie < 5) ulozeniaFigurek[i] = mozliweUlozenia[0];
+                if (losowanie >= 5 && losowanie < 15) ulozeniaFigurek[i] = mozliweUlozenia[1];
+                if (losowanie >= 15 && losowanie < 30) ulozeniaFigurek[i] = mozliweUlozenia[2];
+                if (losowanie >= 30 && losowanie < 50) ulozeniaFigurek[i] = mozliweUlozenia[3];
+                if (losowanie >= 50 && losowanie < 75) ulozeniaFigurek[i] = mozliweUlozenia[4];
+                if (losowanie >= 75 && losowanie < 100) ulozeniaFigurek[i] = mozliweUlozenia[2];
+            }
+
+                losowanie = (int) (Math.random() * 100);
+                if (losowanie >= 0 && losowanie < 10) stykajaSie = true;
+
+        }
+
+
+         public void pokazUlozenie() {
+            wyslijDoWszystkich("Figurka 1 spadła na: " + ulozeniaFigurek[0]);
+            wyslijDoWszystkich("Figurka 2 spadła na: " + ulozeniaFigurek[1]);
+
+            if (stykajaSie) wyslijDoWszystkich("Figurki stykają się!");
+
+         }
+
+
+
+
+        }
+
 
     private void wyslijDoJednego(Uczestnik uczestnik, String text)
     {
@@ -82,12 +129,17 @@ class Uczestnik extends Thread {
 
     private void graj() {
 
-        out.println("\nzdobyłeś punkt!");
+        Rzut rzut = new Rzut();
+        rzut.pokazUlozenie();
+
+        out.println("\nZdobyłeś punkt!");
+
         punkty++;
-        out.println("\nMasz punktów:" + punkty);
+        out.println("\nMasz pu2nktów:" + punkty);
         out.println("[enter] - rzucaj");
         out.println("/p - punkty");
-        out.println("/r - rezygnuj\n");
+        out.println("/r - rezygnuj");
+        out.println("/q - wyjdź\n");
         wyslijDoInnych(this, this.nick + " +1 punkt!");
     }
 
