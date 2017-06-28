@@ -19,19 +19,25 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="217" column="10" lean-forward="false" selection-start-line="217" selection-start-column="10" selection-end-line="217" selection-end-column="10" />
+            <state relative-caret-position="83">
+              <caret line="224" column="15" lean-forward="false" selection-start-line="224" selection-start-column="15" selection-end-line="224" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#main#0;class#Server#0" expanded="false" />
                 <element signature="e#1879#1890#0" expanded="true" />
                 <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+                <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
                 <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
                 <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
                 <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-                <element signature="e#6991#6992#0" expanded="true" />
-                <element signature="e#7034#7035#0" expanded="true" />
-                <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+                <element signature="e#7077#7078#0" expanded="true" />
+                <element signature="e#7120#7121#0" expanded="true" />
+                <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -48,15 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pierwszy</find>
-      <find>maxIlosc</find>
-      <find>vector</find>
-      <find>add</find>
-      <find>Vector</find>
-      <find>uczestnicy</find>
-      <find>Figurka</find>
-      <find>Rzut()</find>
-      <find>for</find>
       <find>graj</find>
       <find>uczes</find>
       <find>Uczestnik</find>
@@ -74,10 +71,19 @@
       <find>punktywRzucie</find>
       <find>zako</find>
       <find>zakoncz</find>
-      <find>ustawAktualnego</find>
       <find>aktualnyUczestnik</find>
       <find>zakon</find>
       <find>zakonczTure</find>
+      <find>uczestnicy</find>
+      <find>losujKtoZacznie</find>
+      <find>ktoZacznie</find>
+      <find>ustawAktualnego</find>
+      <find>nick</find>
+      <find>przekaZ</find>
+      <find>opuscGre</find>
+      <find>przekaz</find>
+      <find>/q</find>
+      <find>linia</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -120,9 +126,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -137,6 +142,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -584,12 +590,13 @@
       <workItem from="1498539899998" duration="7248000" />
       <workItem from="1498573342967" duration="5146000" />
       <workItem from="1498578588268" duration="7109000" />
-      <workItem from="1498636482866" duration="14397000" />
+      <workItem from="1498636482866" duration="17205000" />
+      <workItem from="1498670716056" duration="3778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56140000" />
+    <option name="totallyTimeSpent" value="62726000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -656,12 +663,43 @@
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
+            <element signature="e#1879#1890#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -744,12 +782,18 @@
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -832,12 +876,18 @@
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -851,12 +901,18 @@
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -870,12 +926,18 @@
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -889,12 +951,18 @@
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -972,9 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-219">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1286#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -982,25 +1047,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="19" column="76" lean-forward="false" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="1102" column="28" lean-forward="true" selection-start-line="1102" selection-start-column="28" selection-end-line="1102" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="217" column="10" lean-forward="false" selection-start-line="217" selection-start-column="10" selection-end-line="217" selection-end-column="10" />
+        <state relative-caret-position="83">
+          <caret line="224" column="15" lean-forward="false" selection-start-line="224" selection-start-column="15" selection-end-line="224" selection-end-column="15" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
             <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
             <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#6991#6992#0" expanded="true" />
-            <element signature="e#7034#7035#0" expanded="true" />
-            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#7077#7078#0" expanded="true" />
+            <element signature="e#7120#7121#0" expanded="true" />
+            <element signature="method#wyslijDoWszystkich#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#wyslijDoInnych#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#graj#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#pokazPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#dolaczDoGry#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#opuscGre#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>

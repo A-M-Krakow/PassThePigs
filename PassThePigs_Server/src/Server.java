@@ -11,7 +11,7 @@ import java.util.Vector;
  */
 public class Server {
     private static ServerSocket server; // deklaracja zmiennej przechowującej socket na którym nasłuchuje serwer
-    private static final  int PORT = 22; // definicja portu, na którym nasłuchuje serwer
+    private static final  int PORT = 23; // definicja portu, na którym nasłuchuje serwer
 
     public static void main(String args[]){
         int maxIloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
@@ -45,7 +45,8 @@ class Uczestnik extends Thread {
     static int polaczeniGracze = 0;  //definicja zmiennej przechowującej ilość podłączonych uczestników
     static Uczestnik aktualnyUczestnik;
     static int maxIloscGraczy;
-    static int ktoZacznie = 0;
+    static Uczestnik ktoZacznie;
+    String linia; // deklaracja napisu wpisanego przez użytkownika
     boolean pierwszy = false;
     int wszystkiePunkty = 0;
     int punktyWTurze = 0;
@@ -103,7 +104,7 @@ class Uczestnik extends Thread {
 
              if (!stykajaSie) {
                 if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
-                    wyslijDoWszystkich("Zerowanie punktów w turze!");
+                    wyslijDoWszystkich("Zerowanie punktów w turze!\n\n");
                     punktywRzucie=-1;
                     punktyWTurze=0;
                 }
@@ -133,14 +134,14 @@ class Uczestnik extends Thread {
                     out.println("/p - wszystkie punkty");
                     out.println("/r - rezygnuj");
                     out.println("/q - wyjdź\n");
-                    wyslijDoInnych(aktualnyUczestnik, nick + " +"  + punktywRzucie + " punktów !");
+                    wyslijDoInnych(aktualnyUczestnik, ">>" + nick + "<< +"  + punktywRzucie + " punktów !");
 
                 }
 
 
             } else {
                 wyslijDoWszystkich("Figurki stykają się!");
-                wyslijDoWszystkich("Zerowanie wszystkich punktów!!");
+                wyslijDoWszystkich("Zerowanie wszystkich punktów!!\n\n");
                 punktywRzucie=-1;
                 punktyWTurze = 0;
                 wszystkiePunkty = 0;
@@ -187,7 +188,7 @@ class Uczestnik extends Thread {
 
         for (Uczestnik uczestnik : uczestnicy) { // dla uczestników z listy uczestników
 
-            out.println(uczestnik.nick + ": " + uczestnik.wszystkiePunkty + "pkt" );
+            out.println(">>"+ uczestnik.nick + "<<" +  ": " + uczestnik.wszystkiePunkty + "pkt" );
         }
         out.println("*****************");
     }
@@ -196,58 +197,75 @@ class Uczestnik extends Thread {
 
             uczestnicy.add(this); // dodanie bieżącego uczestnika do listy uczestników
 
-        System.out.println("Do gry dołączył: " + nick);                         // to wyświetlamy na serwerze
+        System.out.println("Do gry dołączył: " + ">>" + nick + "<<");                         // to wyświetlamy na serwerze
         System.out.println("Połączonych graczy: " + uczestnicy.size()+ "/" + maxIloscGraczy);      // to też
-        wyslijDoInnych(this, "Do gry dołączył: " + nick);                         // wysyłamy do wszystkich
+        wyslijDoInnych(this, "Do gry dołączył: " + ">>" + nick + "<<");                         // wysyłamy do wszystkich
     }
 
     private synchronized void opuscGre(){
-        wyslijDoWszystkich("Grę opuścił: " + nick);                              // jeżeli wpisał /q to opuszcza grę
+        wyslijDoWszystkich("Grę opuścił: " + ">>" + nick + "<<");                              // jeżeli wpisał /q to opuszcza grę
         if (this == aktualnyUczestnik) {
             zakonczTure();
         }
             uczestnicy.removeElement(this);
             maxIloscGraczy--;
-        System.out.println("Grę opuścił: " + nick);
+        System.out.println("Grę opuścił: " + ">>" + nick + "<<");
         System.out.println("Połączonych graczy: " + uczestnicy.size()+ "/" + maxIloscGraczy);
 
     }
 
     private synchronized void zakonczTure() {
 
-            wyslijDoWszystkich("*** koniec tury ***");
-            if ((uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
-                ustawAktualnego(0);
-            } else {
-                ustawAktualnego(uczestnicy.indexOf(this) + 1);
+        wyslijDoWszystkich("*** koniec tury gracza >>" + this.nick + "<< ***");
+
+        for (Uczestnik uczestnik : uczestnicy)
+        {
+            if  (uczestnik.wszystkiePunkty > 99) {
+
+                wyslijDoWszystkich("ZWYCIĘZCA: " + uczestnik.nick);
+                pokazPunkty();
+                wyslijDoWszystkich("KONIEC GRY! Komenda /q kończy połączenie.");   // to wysyłamy do klienta
+                try {
+                    while ((linia = in.readLine())!= null) {
+                        if (linia.equalsIgnoreCase("/q")) opuscGre();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
             }
-            wszystkiePunkty+=punktyWTurze;
+        }
 
+        if ((uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
+            przekazKolejke(uczestnicy.get(0));
+            if (this == ktoZacznie) ktoZacznie = uczestnicy.get(0);
+        }
+        else {
+            przekazKolejke(uczestnicy.get(uczestnicy.indexOf(this) + 1));
+            if (this == ktoZacznie) ktoZacznie = uczestnicy.get(uczestnicy.indexOf(this) + 1);
+        }
 
+        wszystkiePunkty+=punktyWTurze;
 
     }
 
-    private int losujKtoZacznie()
-    {
-        int ktoZacznie = (int)(Math.random() * maxIloscGraczy);
-        return ktoZacznie;
+    private Uczestnik losujKtoZacznie() {
+        int wylosowany = (int)(Math.random() * maxIloscGraczy);
+        return uczestnicy.get(wylosowany);
     }
 
-    private synchronized  void ustawAktualnego(int numerAktualnego) {
-        aktualnyUczestnik = uczestnicy.get(numerAktualnego) ;
-        wyslijDoJednego(uczestnicy.get(numerAktualnego), "\n\nTWOJA KOLEJ!\n\n");
-        wyslijDoJednego(uczestnicy.get(numerAktualnego), "[enter] - rzucaj");
-        wyslijDoJednego(uczestnicy.get(numerAktualnego),"/r - rezygnuj");
-        wyslijDoInnych(aktualnyUczestnik, "\n\nTeraz rzuca: " + aktualnyUczestnik.nick);
+    private synchronized  void przekazKolejke(Uczestnik aktualny) {
+        aktualnyUczestnik = aktualny ;
+        wyslijDoJednego(aktualny, "\n\nTWOJA KOLEJ!");
+        wyslijDoJednego(aktualny, "[enter] - rzucaj");
+        wyslijDoJednego(aktualny,"/r - rezygnuj");
+        wyslijDoInnych(aktualnyUczestnik, "\n\nTeraz rzuca: " + ">>" + aktualnyUczestnik.nick + "<<");
         wyslijDoWszystkich("/p - punkty");
         wyslijDoWszystkich("/q - wyjscie");
-        aktualnyUczestnik = uczestnicy.get(numerAktualnego) ;
     }
 
-
-
     public void run() {
-        String linia; // deklaracja napisu wpisanego przez użytkownika
+
 
         try {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
@@ -272,7 +290,7 @@ class Uczestnik extends Thread {
                 if (pierwszy)
                 {
                     ktoZacznie = losujKtoZacznie();
-                    ustawAktualnego(ktoZacznie);
+                    przekazKolejke(ktoZacznie);
                 }
 
                     while ((linia = in.readLine()) != null) {
