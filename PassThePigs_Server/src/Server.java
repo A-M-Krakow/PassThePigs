@@ -215,13 +215,14 @@ class Uczestnik extends Thread {
 
     private synchronized void zakonczTure() {
 
+            wyslijDoWszystkich("*** koniec tury ***");
             if ((uczestnicy.indexOf(this) + 1 == uczestnicy.size())) {
                 ustawAktualnego(0);
             } else {
                 ustawAktualnego(uczestnicy.indexOf(this) + 1);
             }
             wszystkiePunkty+=punktyWTurze;
-            wyslijDoWszystkich("*** koniec tury ***");
+
 
 
     }
