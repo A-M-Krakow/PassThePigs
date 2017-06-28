@@ -16,109 +16,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="87" column="96" lean-forward="false" selection-start-line="87" selection-start-column="96" selection-end-line="87" selection-end-column="96" />
+            <state relative-caret-position="108">
+              <caret line="239" column="86" lean-forward="false" selection-start-line="239" selection-start-column="86" selection-end-line="239" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#main#0;class#Server#0" expanded="false" />
                 <element signature="e#1879#1890#0" expanded="true" />
-                <element signature="e#4434#4435#0" expanded="true" />
-                <element signature="e#4477#4478#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Uczestnik.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/PassThePigs_Server/Uczestnik.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="19" column="76" lean-forward="false" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.class" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/out/production/PassThePigs_Server/Server.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#1286#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vector.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/Vector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11866">
-              <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#53988#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#5447#5448#0" expanded="false" />
-                <element signature="e#5487#5488#0" expanded="false" />
-                <element signature="e#5671#5672#0" expanded="false" />
-                <element signature="e#5695#5696#0" expanded="false" />
-                <element signature="e#7119#7120#0" expanded="false" />
-                <element signature="e#7193#7194#0" expanded="false" />
-                <element signature="e#11481#11482#0" expanded="false" />
-                <element signature="e#11522#11523#0" expanded="false" />
-                <element signature="e#11695#11696#0" expanded="false" />
-                <element signature="e#11730#11731#0" expanded="false" />
-                <element signature="e#12004#12005#0" expanded="false" />
-                <element signature="e#12044#12045#0" expanded="false" />
-                <element signature="e#12576#12577#0" expanded="false" />
-                <element signature="e#12635#12636#0" expanded="false" />
-                <element signature="e#13443#13444#0" expanded="false" />
-                <element signature="e#13484#13485#0" expanded="false" />
-                <element signature="e#14072#14073#0" expanded="false" />
-                <element signature="e#14108#14109#0" expanded="false" />
-                <element signature="e#15956#15957#0" expanded="false" />
-                <element signature="e#16009#16010#0" expanded="false" />
-                <element signature="e#26120#26121#0" expanded="false" />
-                <element signature="e#26183#26184#0" expanded="false" />
-                <element signature="e#27935#27936#0" expanded="false" />
-                <element signature="e#27980#27981#0" expanded="false" />
-                <element signature="e#30158#30159#0" expanded="false" />
-                <element signature="e#30197#30198#0" expanded="false" />
-                <element signature="e#30749#30750#0" expanded="false" />
-                <element signature="e#30796#30797#0" expanded="false" />
-                <element signature="e#31982#31983#0" expanded="false" />
-                <element signature="e#32017#32018#0" expanded="false" />
-                <element signature="e#32515#32516#0" expanded="false" />
-                <element signature="e#32558#32559#0" expanded="false" />
-                <element signature="e#34479#34480#0" expanded="false" />
-                <element signature="e#34520#34521#0" expanded="false" />
-                <element signature="e#35576#35577#0" expanded="false" />
-                <element signature="e#35617#35618#0" expanded="false" />
-                <element signature="e#37847#37848#0" expanded="false" />
-                <element signature="e#37885#37886#0" expanded="false" />
-                <element signature="e#37995#37996#0" expanded="false" />
-                <element signature="e#38034#38035#0" expanded="false" />
-                <element signature="e#38211#38212#0" expanded="false" />
-                <element signature="e#38250#38251#0" expanded="false" />
-                <element signature="e#42942#42943#0" expanded="false" />
-                <element signature="e#42979#42980#0" expanded="false" />
-                <element signature="e#43292#43293#0" expanded="false" />
-                <element signature="e#43324#43325#0" expanded="false" />
-                <element signature="e#45891#45892#0" expanded="false" />
-                <element signature="e#45933#45934#0" expanded="false" />
-                <element signature="e#45967#45968#0" expanded="false" />
-                <element signature="e#46004#46005#0" expanded="false" />
-                <element signature="e#46042#46043#0" expanded="false" />
-                <element signature="e#46083#46084#0" expanded="false" />
-                <element signature="e#50688#50689#0" expanded="false" />
-                <element signature="e#50756#50757#0" expanded="false" />
-                <element signature="e#53787#53788#0" expanded="false" />
-                <element signature="e#53845#53846#0" expanded="false" />
-                <element signature="e#53885#53886#0" expanded="false" />
-                <element signature="e#53978#53979#0" expanded="false" />
+                <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+                <element signature="e#6991#6992#0" expanded="true" />
+                <element signature="e#7034#7035#0" expanded="true" />
+                <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,26 +48,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>wyslijdo</find>
-      <find>/q</find>
-      <find>dołącz</find>
-      <find>break</find>
-      <find>maxilo</find>
-      <find>synchro</find>
-      <find>maxIloscGraczy</find>
-      <find>aktual</find>
-      <find>aktualny</find>
-      <find>aktualnyUczestnik =</find>
-      <find>ktoZacznie</find>
-      <find>ustaw</find>
-      <find>wyslijDoJednego</find>
-      <find>ustawAktualnego</find>
-      <find>pokaz</find>
-      <find>punkty</find>
-      <find>teraz</find>
-      <find>wyslijDoInnych</find>
-      <find>zdobył</find>
-      <find>max</find>
       <find>pierwszy</find>
       <find>maxIlosc</find>
       <find>vector</find>
@@ -165,6 +58,26 @@
       <find>Rzut()</find>
       <find>for</find>
       <find>graj</find>
+      <find>uczes</find>
+      <find>Uczestnik</find>
+      <find>wszystkiePunkty</find>
+      <find>wszystkie</find>
+      <find>punktyWTurze</find>
+      <find>rezygnuj</find>
+      <find>pokazUlozenie</find>
+      <find>mozliweUlozenia</find>
+      <find>punkty</find>
+      <find>turze</find>
+      <find>rzut</find>
+      <find>podliczPu</find>
+      <find>rzut.podli</find>
+      <find>punktywRzucie</find>
+      <find>zako</find>
+      <find>zakoncz</find>
+      <find>ustawAktualnego</find>
+      <find>aktualnyUczestnik</find>
+      <find>zakon</find>
+      <find>zakonczTure</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -175,8 +88,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Server.java" />
         <option value="$PROJECT_DIR$/out/production/PassThePigs_Server/Server.class" />
+        <option value="$PROJECT_DIR$/src/Server.java" />
       </list>
     </option>
   </component>
@@ -189,7 +102,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1378" />
+    <option name="width" value="1382" />
     <option name="height" value="754" />
   </component>
   <component name="ProjectView">
@@ -216,28 +129,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="PassThePigs_Server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PassThePigs_Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PassThePigs_Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PassThePigs_Server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PassThePigs_Server" />
@@ -693,15 +584,15 @@
       <workItem from="1498539899998" duration="7248000" />
       <workItem from="1498573342967" duration="5146000" />
       <workItem from="1498578588268" duration="7109000" />
-      <workItem from="1498636482866" duration="2819000" />
+      <workItem from="1498636482866" duration="14249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44562000" />
+    <option name="totallyTimeSpent" value="55992000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -714,12 +605,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32142857" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3726708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2503671" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18374817" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -747,7 +638,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="2" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -762,9 +653,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -844,9 +741,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -926,9 +829,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -939,9 +848,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -952,9 +867,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -965,9 +886,15 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
             <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1041,15 +968,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
+    <entry file="file://$PROJECT_DIR$/out/production/PassThePigs_Server/Server.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="87" column="96" lean-forward="false" selection-start-line="87" selection-start-column="96" selection-end-line="87" selection-end-column="96" />
+        <state relative-caret-position="-219">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1879#1890#0" expanded="true" />
-            <element signature="e#4434#4435#0" expanded="true" />
-            <element signature="e#4477#4478#0" expanded="true" />
+            <element signature="e#0#1286#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1062,12 +986,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/PassThePigs_Server/Server.class">
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="239" column="86" lean-forward="false" selection-start-line="239" selection-start-column="86" selection-end-line="239" selection-end-column="86" />
           <folding>
-            <element signature="e#0#1286#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#main#0;class#Server#0" expanded="false" />
+            <element signature="e#1879#1890#0" expanded="true" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#Rzut#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podajUlozenie#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#podliczPunkty#0;class#Rzut#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#6991#6992#0" expanded="true" />
+            <element signature="e#7034#7035#0" expanded="true" />
+            <element signature="method#losujKtoZacznie#0;class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>

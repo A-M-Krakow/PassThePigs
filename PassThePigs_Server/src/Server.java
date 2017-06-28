@@ -47,7 +47,8 @@ class Uczestnik extends Thread {
     static int maxIloscGraczy;
     static int ktoZacznie = 0;
     boolean pierwszy = false;
-    int punkty = 0;
+    int wszystkiePunkty = 0;
+    int punktyWTurze = 0;
     private Socket socket; // deklaracja socketu dla połączenia z uczestnikiem
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
     private PrintWriter out; // deklaracja strumienia danych wysyłanych do uczestnika
@@ -61,9 +62,10 @@ class Uczestnik extends Thread {
     }
 
     class Rzut {
-
-        String [] ulozeniaFigurek = new String[2];
+        int punktywRzucie;
         boolean stykajaSie = false;
+        String [] ulozeniaFigurek = new String[2];
+
         String[] mozliweUlozenia = {
                 "ucho",
                 "ryjek",
@@ -74,18 +76,17 @@ class Uczestnik extends Thread {
         };
 
         public Rzut() {
-            ulozeniaFigurek[0] = mozliweUlozenia[2];
-            ulozeniaFigurek[1] =  mozliweUlozenia[5];
 
-            int losowanie;
-         for (int i=0; i<ulozeniaFigurek.length; i++) {
+                punktywRzucie =0;
+                int losowanie;
+                for (int i=0; i<ulozeniaFigurek.length; i++) {
                 losowanie = (int) (Math.random() * 100);
                 if (losowanie >= 0 && losowanie < 5) ulozeniaFigurek[i] = mozliweUlozenia[0];
-                if (losowanie >= 5 && losowanie < 15) ulozeniaFigurek[i] = mozliweUlozenia[1];
-                if (losowanie >= 15 && losowanie < 30) ulozeniaFigurek[i] = mozliweUlozenia[2];
-                if (losowanie >= 30 && losowanie < 50) ulozeniaFigurek[i] = mozliweUlozenia[3];
-                if (losowanie >= 50 && losowanie < 75) ulozeniaFigurek[i] = mozliweUlozenia[4];
-                if (losowanie >= 75 && losowanie < 100) ulozeniaFigurek[i] = mozliweUlozenia[2];
+                else if (losowanie >= 5 && losowanie < 15) ulozeniaFigurek[i] = mozliweUlozenia[1];
+                 else if (losowanie >= 15 && losowanie < 30) ulozeniaFigurek[i] = mozliweUlozenia[2];
+                  else if (losowanie >= 30 && losowanie < 50) ulozeniaFigurek[i] = mozliweUlozenia[3];
+                   else if (losowanie >= 50 && losowanie < 75) ulozeniaFigurek[i] = mozliweUlozenia[4];
+                    else if (losowanie >= 75 && losowanie < 100) ulozeniaFigurek[i] = mozliweUlozenia[5];
             }
 
                 losowanie = (int) (Math.random() * 100);
@@ -93,13 +94,58 @@ class Uczestnik extends Thread {
 
         }
 
-
-         public void pokazUlozenie() {
+         public void podajUlozenie() {
             wyslijDoWszystkich("Figurka 1 spadła na: " + ulozeniaFigurek[0]);
             wyslijDoWszystkich("Figurka 2 spadła na: " + ulozeniaFigurek[1]);
+         }
 
-            if (stykajaSie) wyslijDoWszystkich("Figurki stykają się!");
+         public int podliczPunkty() {
 
+             if (!stykajaSie) {
+                if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
+                    wyslijDoWszystkich("Zerowanie punktów w turze!");
+                    punktywRzucie=-1;
+                    punktyWTurze=0;
+                }
+                else {
+                    if (ulozeniaFigurek[0].equals(ulozeniaFigurek[1]))
+                        {
+                        if(ulozeniaFigurek[0].equals(mozliweUlozenia[0])) punktywRzucie=60;
+                         else if(ulozeniaFigurek[0].equals(mozliweUlozenia[1])) punktywRzucie=40;
+                          else if(ulozeniaFigurek[0].equals(mozliweUlozenia[2])) punktywRzucie=20;
+                           else if(ulozeniaFigurek[0].equals(mozliweUlozenia[3])) punktywRzucie=20;
+                            else if(ulozeniaFigurek[0].equals(mozliweUlozenia[4])) punktywRzucie=1;
+                             else if(ulozeniaFigurek[0].equals(mozliweUlozenia[5])) punktywRzucie=1;
+                    }
+                    else {
+                        for (int i=0; i<ulozeniaFigurek.length; i++) {
+                            if (ulozeniaFigurek[i].equals(mozliweUlozenia[0])) punktywRzucie+=15;
+                             else if (ulozeniaFigurek[i].equals(mozliweUlozenia[1])) punktywRzucie+=10;
+                              else if (ulozeniaFigurek[i].equals(mozliweUlozenia[2])) punktywRzucie+=5;
+                               else if (ulozeniaFigurek[i].equals(mozliweUlozenia[3])) punktywRzucie+=5;
+
+                        }
+                    }
+                    out.println("\nZdobyłeś "  + punktywRzucie + " punktów!");
+                    punktyWTurze+=punktywRzucie;
+                    out.println("\nPunkty w tej turze:" + punktyWTurze);
+                    out.println("[enter] - rzucaj");
+                    out.println("/p - wszystkie punkty");
+                    out.println("/r - rezygnuj");
+                    out.println("/q - wyjdź\n");
+                    wyslijDoInnych(aktualnyUczestnik, nick + " +"  + punktywRzucie + " punktów !");
+
+                }
+
+
+            } else {
+                wyslijDoWszystkich("Figurki stykają się!");
+                wyslijDoWszystkich("Zerowanie wszystkich punktów!!");
+                punktywRzucie=-1;
+                punktyWTurze = 0;
+                wszystkiePunkty = 0;
+            }
+             return punktywRzucie;
          }
 
 
@@ -130,17 +176,9 @@ class Uczestnik extends Thread {
     private void graj() {
 
         Rzut rzut = new Rzut();
-        rzut.pokazUlozenie();
-
-        out.println("\nZdobyłeś punkt!");
-
-        punkty++;
-        out.println("\nMasz pu2nktów:" + punkty);
-        out.println("[enter] - rzucaj");
-        out.println("/p - punkty");
-        out.println("/r - rezygnuj");
-        out.println("/q - wyjdź\n");
-        wyslijDoInnych(this, this.nick + " +1 punkt!");
+        rzut.podajUlozenie();
+        int punkty =  rzut.podliczPunkty();
+        if (punkty == -1) zakonczTure();
     }
 
     private void pokazPunkty() {
@@ -149,20 +187,9 @@ class Uczestnik extends Thread {
 
         for (Uczestnik uczestnik : uczestnicy) { // dla uczestników z listy uczestników
 
-            out.println(uczestnik.nick + ": " + uczestnik.punkty + "pkt" );
+            out.println(uczestnik.nick + ": " + uczestnik.wszystkiePunkty + "pkt" );
         }
         out.println("*****************");
-    }
-
-    private void users() { // metoda wyświetlająca informacje na temat użytkowników
-        out.println("Witaj " + nick + ", aktualnie grają: ");
-        for (Uczestnik uczestnik : uczestnicy) { // dla wszystkich uczestników z listy uczestników
-            synchronized(uczestnicy) { // synchronizowane działanie
-                if (uczestnik != this) // jeżeli uczestnik nie jest bieżącym uczestnikiem
-                    out.print(uczestnik.nick + " "); // wyświetlamy nick tego uczestnika.
-            }
-        }
-        out.println();
     }
 
     private synchronized void dolaczDoGry(){
@@ -172,7 +199,6 @@ class Uczestnik extends Thread {
         System.out.println("Do gry dołączył: " + nick);                         // to wyświetlamy na serwerze
         System.out.println("Połączonych graczy: " + uczestnicy.size()+ "/" + maxIloscGraczy);      // to też
         wyslijDoInnych(this, "Do gry dołączył: " + nick);                         // wysyłamy do wszystkich
-        wyslijDoJednego(this, "Dołączyłeś do gry!");
     }
 
     private synchronized void opuscGre(){
@@ -194,6 +220,10 @@ class Uczestnik extends Thread {
             } else {
                 ustawAktualnego(uczestnicy.indexOf(this) + 1);
             }
+            wszystkiePunkty+=punktyWTurze;
+            wyslijDoWszystkich("*** koniec tury ***");
+
+
     }
 
     private int losujKtoZacznie()
@@ -207,9 +237,10 @@ class Uczestnik extends Thread {
         wyslijDoJednego(uczestnicy.get(numerAktualnego), "\n\nTWOJA KOLEJ!\n\n");
         wyslijDoJednego(uczestnicy.get(numerAktualnego), "[enter] - rzucaj");
         wyslijDoJednego(uczestnicy.get(numerAktualnego),"/r - rezygnuj");
-        wyslijDoInnych(aktualnyUczestnik, "\n\nTeraz rzuca: " + aktualnyUczestnik.nick + "\n\n");
+        wyslijDoInnych(aktualnyUczestnik, "\n\nTeraz rzuca: " + aktualnyUczestnik.nick);
         wyslijDoWszystkich("/p - punkty");
         wyslijDoWszystkich("/q - wyjscie");
+        aktualnyUczestnik = uczestnicy.get(numerAktualnego) ;
     }
 
 
@@ -243,26 +274,17 @@ class Uczestnik extends Thread {
                     ustawAktualnego(ktoZacznie);
                 }
 
-
-
                     while ((linia = in.readLine()) != null) {
                         if (linia.equalsIgnoreCase("/q")) {
                             break;
                         }
-                        if (linia.equalsIgnoreCase("/p")) {
-                            pokazPunkty();
-                        }
-                        else {
-                            if (aktualnyUczestnik == this) {
+                         else if (linia.equalsIgnoreCase("/p")) pokazPunkty();
+                          else if (aktualnyUczestnik == this) {
+                            if ((!linia.equalsIgnoreCase("/r"))) graj();
+                              else zakonczTure();
 
-                                if ((linia.equalsIgnoreCase("/r"))) {
-                                    zakonczTure();
-                                } else {
-                                    graj();
-                                }
-                            }
-                        }
-                    }
+                          }
+                }
                     opuscGre();
             }
             else {
