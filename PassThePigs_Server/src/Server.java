@@ -58,8 +58,8 @@ class Gra {
     public synchronized void dodajUczestnika(Uczestnik uczestnik){
         uczestnicy.add(uczestnik);
         System.out.println("Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");                         // to wyświetlamy na serwerze
-        System.out.println("Połączonych graczy: " + this.podajIloscGraczy() + "/" + maxIloscGraczy);      // to też
-        wyslijDoInnych(aktualny, "Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");                         // wysyłamy do wszystkich
+        System.out.println("Połączonych graczy: " + this.podajIloscGraczy() + "/" + maxIloscGraczy);
+        wyslijDoInnych(aktualny, "Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");
     }
 
     /* Metoda zwracająca ilość graczy w grze */
@@ -83,8 +83,11 @@ class Gra {
     public void szukajZwyciezcy()
     {
         for (Uczestnik uczestnik : uczestnicy) {
+            /* dla wszystkich uczestników */
             if (uczestnik.podajWszystkiePunkty() > 99) {
+                /*jeżeli punkty uczestnika przekroczyły 99 */
                 this.czyJestZwyciezca = true;
+                /* oznaczamy, że wyłoniony został zwycięzca */
             }
         }
     }
@@ -174,7 +177,7 @@ class Gra {
         System.out.println("Połączonych graczy: " + uczestnicy.size()+ "/" + maxIloscGraczy);
         if (maxIloscGraczy ==0) {
             /* jeżeli wszyscy gracze opuścili grę to gra rozpoczyna się na nowo */
-            maxIloscGraczy = poczatkowaMaxIloscGraczy;,
+            maxIloscGraczy = poczatkowaMaxIloscGraczy;
             /*maksymalna ilość graczy jest ustawiana na tą, która była na początku */
             czyJestZwyciezca = false;
             /*dodawana jest informacja o braku zwycięzcy w grze */
