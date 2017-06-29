@@ -167,13 +167,17 @@ class Gra {
             zakonczTure();
         }
         uczestnicy.removeElement(uczestnik);
-
+        /*usuwamy uczestnika z listy uczestników */
         maxIloscGraczy--;
+        /*zmniejszamy maksymalną ilość graczy - żeby inni nie dołączyli w środku gry */
         System.out.println("Grę opuścił: " + "<" + uczestnik.podajNick() + ">");
         System.out.println("Połączonych graczy: " + uczestnicy.size()+ "/" + maxIloscGraczy);
         if (maxIloscGraczy ==0) {
-            maxIloscGraczy = poczatkowaMaxIloscGraczy;
+            /* jeżeli wszyscy gracze opuścili grę to gra rozpoczyna się na nowo */
+            maxIloscGraczy = poczatkowaMaxIloscGraczy;,
+            /*maksymalna ilość graczy jest ustawiana na tą, która była na początku */
             czyJestZwyciezca = false;
+            /*dodawana jest informacja o braku zwycięzcy w grze */
         }
     }
 
@@ -201,9 +205,11 @@ class Gra {
     /* Metoda rozpoczynająca turę gracza */
     public void graj() {
         Rzut rzut = new Rzut(this);
+        /* rzucamy figurkami */
         rzut.podajUlozenie();
-        int punkty =  rzut.podliczPunkty();
-        if (punkty == -1) this.zakonczTure();
+        /*odczytujemy ułożenie figurek */
+        if (rzut.podliczPunkty() == -1) this.zakonczTure();
+        /*jeżeli punkty z rzutu wyniszą -1 (kostki stykały się) to gracz traci turę */
     }
 
     /*Metoda wyśtlająca podanemu graczowi tabelę z punktami */
@@ -218,18 +224,18 @@ class Gra {
         wyslijDoJednego(uczestnik, "*****************");
     }
 
-    /*Metoda wyświetlająca zwycięzcę gry */
-
-
+    /* Metoda ustawiająca pierwszego gracza w kolejce */
     public void ustawPierwszego(Uczestnik uczestnik)
     {
         this.pierwszyWKolejce = uczestnik;
     }
 
+    /*Metoda ustawiająca maksymalną ilość graczy w grze */
     public void ustawMaxIloscGraczy(int maxIloscGraczy) {
         this.maxIloscGraczy = maxIloscGraczy;
     }
 
+    /*Metoda zwracająca listę graczy */
     public Vector<Uczestnik> podajListeUczestnikow()
     {
         return uczestnicy;
@@ -238,12 +244,12 @@ class Gra {
 }
 
 class Rzut {
-    Gra gra;
-    int punktywRzucie = 0;
-    boolean stykajaSie = false;
-    String [] ulozeniaFigurek = new String[2];
+    Gra gra; //gra, do której należy rzut
+    int punktywRzucie = 0;  //punkty zdobyte przy rzucie
+    boolean stykajaSie = false; // informacja, czy wyrzucone kostki się stykają
+    String [] ulozeniaFigurek = new String[2]; // tablica przechowująca ułożenia 2 wyrzuconych figurek */
 
-    String[] mozliweUlozenia = {
+    String[] mozliweUlozenia = {  // tablica przechowująca wszystkie możliwe ułożenia figurki
             "ucho",
             "ryjek",
             "nogi",
@@ -253,11 +259,9 @@ class Rzut {
     };
 
     public Rzut(Gra gra) {
-
         this.gra = gra;
-
         int losowanie;
-        for (int i=0; i<ulozeniaFigurek.length; i++) {
+        for (int i=0; i<ulozeniaFigurek.length; i++) { //dla każdej figurki losujemy jej ułożenie po wyrzuceniu */
             losowanie = (int) (Math.random() * 100);
             if (losowanie >= 0 && losowanie < 5) ulozeniaFigurek[i] = mozliweUlozenia[0];
             else if (losowanie >= 5 && losowanie < 15) ulozeniaFigurek[i] = mozliweUlozenia[1];
@@ -267,7 +271,7 @@ class Rzut {
             else if (losowanie >= 75 && losowanie < 100) ulozeniaFigurek[i] = mozliweUlozenia[5];
         }
 
-        losowanie = (int) (Math.random() * 100);
+        losowanie = (int) (Math.random() * 100); // losujemy, czy figurki się stykają
         if (losowanie >= 0 && losowanie < 10) stykajaSie = true;
 
     }
@@ -282,32 +286,36 @@ class Rzut {
     public int podliczPunkty() {
 
         if (!stykajaSie) {
+            /* jeżeli figurki się stykają */
             if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
+                /*jeżeli na jednej figurce jest lewy a na drugiej prawy bok (albo odwrotnie */
                 gra.wyslijDoWszystkich("Zerowanie punktów w turze!\n\n");
-                punktywRzucie=-1;
-                gra.podajAktualnego().ustawPunktyWTurze(0);
+                punktywRzucie=-1;  // punkty w rzucie są ustawiane na -1 bo stąd później wiemy, że trzeba zakończyć turę
+                gra.podajAktualnego().ustawPunktyWTurze(0); // do punktów w turze przypisujemy jednak 0
             }
             else {
-                if (ulozeniaFigurek[0].equals(ulozeniaFigurek[1]))
+                if (ulozeniaFigurek[0].equals(ulozeniaFigurek[1])) //jeżeli figurki mają takie samo ułożenie
                 {
-                    if(ulozeniaFigurek[0].equals(mozliweUlozenia[0])) punktywRzucie=60;
-                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[1])) punktywRzucie=40;
-                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[2])) punktywRzucie=20;
-                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[3])) punktywRzucie=20;
-                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[4])) punktywRzucie=1;
-                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[5])) punktywRzucie=1;
+                    if(ulozeniaFigurek[0].equals(mozliweUlozenia[0])) punktywRzucie=60;         // punkty za 2 x  ucho
+                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[1])) punktywRzucie=40;    // punkty za 2 x ryjek
+                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[2])) punktywRzucie=20;    // punkty za 2 x nogi
+                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[3])) punktywRzucie=20;    // punkty za 2 x plecy
+                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[4])) punktywRzucie=1;     // punkty za 2 x prawy bok
+                    else if(ulozeniaFigurek[0].equals(mozliweUlozenia[5])) punktywRzucie=1;     // punkty za 2 x lewy bok
                 }
-                else {
-                    for (int i=0; i<ulozeniaFigurek.length; i++) {
-                        if (ulozeniaFigurek[i].equals(mozliweUlozenia[0])) punktywRzucie+=15;
-                        else if (ulozeniaFigurek[i].equals(mozliweUlozenia[1])) punktywRzucie+=10;
-                        else if (ulozeniaFigurek[i].equals(mozliweUlozenia[2])) punktywRzucie+=5;
-                        else if (ulozeniaFigurek[i].equals(mozliweUlozenia[3])) punktywRzucie+=5;
+                else { /*jeżeli ułożenia figurek są różne */
+                    for (int i=0; i<ulozeniaFigurek.length; i++) {  /*dla każdej figurki osobno */
+                        if (ulozeniaFigurek[i].equals(mozliweUlozenia[0])) punktywRzucie+=15;        // punkty za ucho
+                        else if (ulozeniaFigurek[i].equals(mozliweUlozenia[1])) punktywRzucie+=10;   // punkty za ryjek
+                        else if (ulozeniaFigurek[i].equals(mozliweUlozenia[2])) punktywRzucie+=5;    // punkty za nogi
+                        else if (ulozeniaFigurek[i].equals(mozliweUlozenia[3])) punktywRzucie+=5;    // punkty za plecy
 
                     }
                 }
                 gra.wyslijDoJednego(gra.podajAktualnego(), "\nZdobyłeś "  + punktywRzucie + " punktów!");
                 gra.podajAktualnego().ustawPunktyWTurze(gra.podajAktualnego().podajPunktyWTurze()+punktywRzucie);
+                /* dodanie  punktów w rzucie do punktów w turze */
+
                 gra.wyslijDoJednego(gra.podajAktualnego(), "\nPunkty w tej turze:" + gra.podajAktualnego().podajPunktyWTurze());
                 gra.wyslijDoJednego(gra.podajAktualnego(), "[enter] - rzucaj");
                 gra.wyslijDoJednego(gra.podajAktualnego(), "/p - wszystkie punkty");
@@ -316,14 +324,15 @@ class Rzut {
                 gra.wyslijDoInnych(gra.podajAktualnego(), "<" + gra.podajAktualnego().podajNick() + "> +"  + punktywRzucie + " punktów !");
 
             }
-        } else {
+        } else {  /*jeżeli figurki się stykały */
             gra.wyslijDoWszystkich("Figurki stykają się!");
             gra.wyslijDoWszystkich("Zerowanie wszystkich punktów!!\n\n");
-            punktywRzucie=-1;
-            gra.podajAktualnego().ustawPunktyWTurze(0);
-            gra.podajAktualnego().ustawWszystkiePunkty(0);
+            punktywRzucie=-1; // punkty w rzucie są ustawiane na -1 bo stąd później wiemy, że trzeba zakończyć turę
+            gra.podajAktualnego().ustawPunktyWTurze(0);  // do punktów w turze przypisujemy jednak 0
+            gra.podajAktualnego().ustawWszystkiePunkty(0); // wszystkie punkty gracza również zerujemy
         }
         return punktywRzucie;
+        /*zwracamy wszystkie punkty zdobyte w tym rzucie */
     }
 
 }
