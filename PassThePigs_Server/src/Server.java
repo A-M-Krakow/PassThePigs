@@ -23,6 +23,8 @@ public class Server {
             if (sc.hasNextInt()) maxIloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej maxIloscGraczy jeśli jest liczbą całkowitą
         }
         Gra gra = new Gra(maxIloscGraczy);
+        /* Utworzenie nowej gry */
+
         try
         {
             server = new ServerSocket(PORT); // definicja socketu serwera na odpowiednim porcie
@@ -32,7 +34,7 @@ public class Server {
                 Socket socket = server.accept(); // włączenie akceptowania nowego połączenia
                 InetAddress addr = socket.getInetAddress(); // definicja zmiennej przechowującej adres połączonego klienta
                 System.out.println("Połączenie z adresu: "+ addr.getHostName() + " [" + addr.getHostAddress() + "]");
-                new Uczestnik(socket, gra).start(); // uruchomienie obsługi gry dla uczestnika
+                new Uczestnik(socket, gra).start(); // uruchomienie obsługi gry dla uczestnika na jego sockecie
             }
 
         } catch (IOException e) {
@@ -64,12 +66,11 @@ class Gra {
     }
 
     /* Metoda zwracająca ilość graczy w grze */
-     public int podajIloscGraczy() {
+    public int podajIloscGraczy() {
         return uczestnicy.size();
     }
 
     /* Metoda zwracająca maksymalną ilość graczy w grze */
-
     public int podajMaxIloscGraczy() {
         return maxIloscGraczy;
     }
@@ -105,7 +106,7 @@ class Gra {
         /*aktualny gracz zmienia się na następnego gracza */
 
         if(aktualny==pierwszyWKolejce) szukajZwyciezcy();
-        /* jeżeli aktualny gracz jest był pierwszy w kolejce, sprawdzamy, czy nie wyłonił się zwycięzca */
+        /* jeżeli nowy aktualny gracz jest pierwszy w kolejce, sprawdzamy, czy nie wyłonił się zwycięzca */
 
         if (!wskazCzyJestZwyciezca()) {
             /* jeżeli nie wyłonił się zwycięzca */
@@ -135,20 +136,20 @@ class Gra {
     /* Metoda zakańczająca turę gracza */
     public synchronized void zakonczTure() {
         wyslijDoWszystkich("*** koniec tury gracza <" + aktualny.podajNick() + "> ***");
-                    aktualny.przyznajPunkty();
+        aktualny.przyznajPunkty();
                     /*dopisujemy graczowi punkty, które zdobył w turze */
 
-                    if ((uczestnicy.indexOf(aktualny) + 1 == uczestnicy.size())) {
+        if ((uczestnicy.indexOf(aktualny) + 1 == uczestnicy.size())) {
                         /*jeżeli aktualny gracz jest ostatni w kolejce */
-                        przekazKolejke(uczestnicy.get(0));
+            przekazKolejke(uczestnicy.get(0));
                         /*przekazuje kolejkę pierwszemu w kolejce graczowi */
-                    }
-                    else {
-                        przekazKolejke(uczestnicy.get(uczestnicy.indexOf(aktualny) + 1));
+        }
+        else {
+            przekazKolejke(uczestnicy.get(uczestnicy.indexOf(aktualny) + 1));
                         /*w przeciwnym wypadku przekazuje kolejkę graczowi, który jest w kolejce po nim */
-                    }
+        }
 
-            }
+    }
 
 
     /*Metoda usuwająca gracza z gry */
@@ -163,7 +164,7 @@ class Gra {
                 /*jeżeli opuszczający był ostatni na liście */
                 ustawPierwszego(uczestnicy.get(0));
                 /*pierwszym w kolejce zostaje pierwszy na liście */
-                else ustawPierwszego(uczestnicy.get(uczestnicy.indexOf(uczestnik) +1));
+            else ustawPierwszego(uczestnicy.get(uczestnicy.indexOf(uczestnik) +1));
                  /* w przeciwnym wypadku, pierwszym w kolejce zostaje następny na liście */
         }
 
@@ -186,7 +187,7 @@ class Gra {
     }
 
     /* Metoda wysyłająca wiadomość do wszystkich graczy w grze */
-    public synchronized void wyslijDoWszystkich(String wiadomosc) { // metoda wysyłająca dane do wszytkich uczestników
+    public synchronized void wyslijDoWszystkich(String wiadomosc) { // metoda wysyłająca tekst do wszytkich uczestników
         for (Uczestnik uczestnik : uczestnicy) { // dla uczestników z listy uczestników
             uczestnik.wyslijWiadomosc(wiadomosc);
         }
@@ -271,12 +272,12 @@ class Rzut {
         int losowanie;
         for (int i=0; i<ulozeniaFigurek.length; i++) { //dla każdej figurki losujemy jej ułożenie po wyrzuceniu */
             losowanie = (int) (Math.random() * 100);
-            if (losowanie >= 0 && losowanie < 5) ulozeniaFigurek[i] = mozliweUlozenia[0];
-            else if (losowanie >= 5 && losowanie < 15) ulozeniaFigurek[i] = mozliweUlozenia[1];
-            else if (losowanie >= 15 && losowanie < 30) ulozeniaFigurek[i] = mozliweUlozenia[2];
-            else if (losowanie >= 30 && losowanie < 50) ulozeniaFigurek[i] = mozliweUlozenia[3];
-            else if (losowanie >= 50 && losowanie < 75) ulozeniaFigurek[i] = mozliweUlozenia[4];
-            else if (losowanie >= 75 && losowanie < 100) ulozeniaFigurek[i] = mozliweUlozenia[5];
+            if (losowanie >= 0 && losowanie < 5) ulozeniaFigurek[i] = mozliweUlozenia[0];           // wylosowano ucho
+            else if (losowanie >= 5 && losowanie < 15) ulozeniaFigurek[i] = mozliweUlozenia[1];     // wylosowano ryjek
+            else if (losowanie >= 15 && losowanie < 30) ulozeniaFigurek[i] = mozliweUlozenia[2];    // wylosowano nogi
+            else if (losowanie >= 30 && losowanie < 50) ulozeniaFigurek[i] = mozliweUlozenia[3];    // wylosowano plecy
+            else if (losowanie >= 50 && losowanie < 75) ulozeniaFigurek[i] = mozliweUlozenia[4];    // wylosowano prawy bok
+            else if (losowanie >= 75 && losowanie < 100) ulozeniaFigurek[i] = mozliweUlozenia[5];   // wylosowano lewy bok
         }
 
         losowanie = (int) (Math.random() * 100); // losujemy, czy figurki się stykają
@@ -299,12 +300,12 @@ class Rzut {
     public void podliczPunkty() {
 
         if (!stykajaSie) {
-            /* jeżeli figurki się stykają */
+            /* jeżeli figurki się nie stykają */
             if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
                 /*jeżeli na jednej figurce jest lewy a na drugiej prawy bok (albo odwrotnie */
                 gra.wyslijDoWszystkich("Zerowanie punktów w turze!\n\n");
                 pechowy = true;   // rzut oznaczamy jako pechowy (kończący turę)
-                gra.podajAktualnego().ustawPunktyWTurze(0); // do punktów w turze przypisujemy  0
+                gra.podajAktualnego().ustawPunktyWTurze(0); // zerujemy punkty w turze
             }
             else {
                 if (ulozeniaFigurek[0].equals(ulozeniaFigurek[1])) //jeżeli figurki mają takie samo ułożenie
@@ -341,7 +342,7 @@ class Rzut {
             gra.wyslijDoWszystkich("Figurki stykają się!");
             gra.wyslijDoWszystkich("Zerowanie wszystkich punktów!!\n\n");
             pechowy = true; // rzut oznaczamy jako pechowy (kończący turę)
-            gra.podajAktualnego().ustawPunktyWTurze(0);  // do punktów w turze przypisujemy  0
+            gra.podajAktualnego().ustawPunktyWTurze(0);  // zerujemy punkty w turze
             gra.podajAktualnego().ustawWszystkiePunkty(0); // wszystkie punkty gracza również zerujemy
         }
     }
@@ -350,16 +351,16 @@ class Rzut {
 
 /*Obiekty klasy Uczestnik to gracze podłączeni do serwera gry */
 class Uczestnik extends Thread {
-    private Gra gra;
+    private Gra gra; // deklaracja gry, w której bierze udział uczestnik
     private String linia; // deklaracja napisu wpisanego przez użytkownika
-    private int wszystkiePunkty = 0;
-    private int punktyWTurze = 0;
+    private int wszystkiePunkty = 0;  // wszystkie punkty gracza
+    private int punktyWTurze = 0;     // punkty gracza w aktualnej turze
     private Socket socket; // deklaracja socketu dla połączenia z uczestnikiem
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
     private PrintWriter out; // deklaracja strumienia danych wysyłanych do uczestnika
     private String nick; // deklaracja nazwy uczestnika
 
-    public Uczestnik(Socket socket, Gra gra) { // konstruktor obsługi nowego połączenia)
+    public Uczestnik(Socket socket, Gra gra) { // konstruktor nowego gracza (oznaczenie gry oraz socketu, na którym jest jego połączenie)
         this.gra = gra;
         this.socket = socket;
     }
@@ -371,13 +372,13 @@ class Uczestnik extends Thread {
         this.punktyWTurze = 0;
     }
 
-    /*Metoda wyświetlająca tekst temu użytkownikowi */
+    /*Metoda wyświetlająca tekst tylko temu uczetnikowi */
     public void wyslijWiadomosc(String wiadomosc)
     {
         this.out.println(wiadomosc);
     }
 
-    /* Metoda zwracająca nick użytkownika */
+    /* Metoda zwracająca nick uczestnika */
     public String podajNick() {
         return nick;
     }
@@ -399,7 +400,7 @@ class Uczestnik extends Thread {
 
     /*Metoda aktualizująca punkty uczestnika w aktualnej turze */
     public void ustawPunktyWTurze(int punkty)    {
-         punktyWTurze = punkty;
+        punktyWTurze = punkty;
     }
 
 
@@ -420,19 +421,19 @@ class Uczestnik extends Thread {
                 gra.dodajUczestnika(this);
 
                 if (gra.podajIloscGraczy() != 1) {
-                    /* jeżeli nie gracz jest pierwszym podłączonym */
-                    poczatek = false;
+                    /* jeżeli gracz nie jest pierwszym podłączonym */
+                    poczatek = false;  //oznaczamy, że gra zaczęła się już wcześniej
                 }
 
                 if (poczatek) {
-                    /* jeżeli gra dopiero się zaczęła */
+                    /* jeżeli gra dopiero teraz się zaczęła */
                     wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
                     //losujemy numer gracza, który zacznie grę
                 }
 
 
                 if (gra.podajIloscGraczy() != gra.podajMaxIloscGraczy()) {
-                    /* jeżeli wszyscy gracze nie dołączyli */
+                    /* jeżeli wszyscy gracze jeszcze  nie dołączyli */
                     out.println("Czekaj na dołączenie wszystkich graczy!");
 
                     while (gra.podajIloscGraczy() != gra.podajMaxIloscGraczy()) {
@@ -451,25 +452,25 @@ class Uczestnik extends Thread {
                     /* dopóki istnieje możliwość odebrania tekstu od gracza (połączenie)
                         oraz dopóki nie wyłonił się zwycięzca gry */
                     if ((linia.equalsIgnoreCase("/q")) || (gra.wskazCzyJestZwyciezca())) {
-                        /* jeżeli gracz wpisze /q albo zaistnieje zwycięzca */
+                        /* jeżeli gracz wpisze /q albo jeżeli zaistnieje zwycięzca */
                         break; // przechodzimy do opuszczania gry
                     } else if (linia.equalsIgnoreCase("/p")) gra.pokazPunkty(this);
                     /* jeżeli gracz wpisze /p, wyświetli mu się tabela z punktami */
                     else if (gra.podajAktualnego() == this) {
                         /*jeżeli gracz jest aktualnym graczem */
                         if ((!linia.equalsIgnoreCase("/r"))) gra.graj();
-                        /* jeżeli gracz nie wpisze /r to rozpoczynamy granie */
+                        /* i jeżeli gracz nie wpisze /r to rozpoczynamy granie */
                         else gra.zakonczTure();
                         /*jeżeli wpisał /r to kończymy jego turę */
                     }
-                } gra.opuscGre(this);    /*nie ma tekstu wpisanego od uczestnika (brak połączenia)
+                } gra.opuscGre(this);    /*nie było tekstu wpisanego od uczestnika (brak połączenia)
                                                     lub wyłonił się zwycięzca - opuszczamy grę */
-        }
+            }
             else {
                 out.println("Serwer jest pełny! Komenda /q kończy połączenie ");   /* gra nie miała wolnych miejsc, gracz nie został wpuszczony */
                 while ((linia = in.readLine())!= null) {
                     if (linia.equalsIgnoreCase("/q")) break;
-                    /*jeżeli gracz wpisze /q zakończy grę */
+                    /*jeżeli gracz wpisze /q zakończy połączenie */
                 }
             }
 

@@ -19,15 +19,43 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="321">
+              <caret line="280" column="9" lean-forward="true" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#Server#0" expanded="false" />
-                <element signature="class#Gra#0" expanded="false" />
-                <element signature="class#Rzut#0" expanded="false" />
-                <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-                <element signature="class#Uczestnik#0" expanded="false" />
+                <element signature="e#2582#2583#0" expanded="true" />
+                <element signature="e#2661#2662#0" expanded="true" />
+                <element signature="e#3236#3237#0" expanded="true" />
+                <element signature="e#3276#3277#0" expanded="true" />
+                <element signature="e#3375#3376#0" expanded="true" />
+                <element signature="e#3412#3413#0" expanded="true" />
+                <element signature="e#3528#3529#0" expanded="true" />
+                <element signature="e#3559#3560#0" expanded="true" />
+                <element signature="e#4111#4112#0" expanded="true" />
+                <element signature="e#4150#4151#0" expanded="true" />
+                <element signature="e#8401#8402#0" expanded="true" />
+                <element signature="e#8453#8454#0" expanded="true" />
+                <element signature="e#9906#9907#0" expanded="true" />
+                <element signature="e#9955#9956#0" expanded="true" />
+                <element signature="e#10073#10074#0" expanded="true" />
+                <element signature="e#10125#10126#0" expanded="true" />
+                <element signature="e#10225#10226#0" expanded="true" />
+                <element signature="e#10258#10259#0" expanded="true" />
+                <element signature="e#12188#12189#0" expanded="true" />
+                <element signature="e#12218#12219#0" expanded="true" />
+                <element signature="e#17333#17334#0" expanded="true" />
+                <element signature="e#17376#17377#0" expanded="true" />
+                <element signature="e#17453#17454#0" expanded="true" />
+                <element signature="e#17480#17481#0" expanded="true" />
+                <element signature="e#17580#17581#0" expanded="true" />
+                <element signature="e#17618#17619#0" expanded="true" />
+                <element signature="e#17722#17723#0" expanded="true" />
+                <element signature="e#17757#17758#0" expanded="true" />
+                <element signature="e#17869#17870#0" expanded="true" />
+                <element signature="e#17909#17910#0" expanded="true" />
+                <element signature="e#18027#18028#0" expanded="true" />
+                <element signature="e#18064#18065#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -115,8 +143,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -132,6 +158,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -587,26 +615,27 @@
       <workItem from="1498741215499" duration="15338000" />
       <workItem from="1498765292340" duration="5168000" />
       <workItem from="1498809835777" duration="428000" />
+      <workItem from="1498811599252" duration="58000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83660000" />
+    <option name="totallyTimeSpent" value="83718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="0" width="1378" height="754" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49706313" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.50293684" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.49706313" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30279502" sideWeight="0.49706313" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -623,7 +652,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49706313" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869694" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -656,10 +684,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,10 +727,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,10 +770,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -701,10 +813,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -716,10 +856,81 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#Server#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -739,10 +950,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -762,10 +1001,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -777,10 +1044,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,10 +1087,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -807,10 +1130,38 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -847,15 +1198,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="321">
+          <caret line="280" column="9" lean-forward="true" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
-            <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
+            <element signature="e#2582#2583#0" expanded="true" />
+            <element signature="e#2661#2662#0" expanded="true" />
+            <element signature="e#3236#3237#0" expanded="true" />
+            <element signature="e#3276#3277#0" expanded="true" />
+            <element signature="e#3375#3376#0" expanded="true" />
+            <element signature="e#3412#3413#0" expanded="true" />
+            <element signature="e#3528#3529#0" expanded="true" />
+            <element signature="e#3559#3560#0" expanded="true" />
+            <element signature="e#4111#4112#0" expanded="true" />
+            <element signature="e#4150#4151#0" expanded="true" />
+            <element signature="e#8401#8402#0" expanded="true" />
+            <element signature="e#8453#8454#0" expanded="true" />
+            <element signature="e#9906#9907#0" expanded="true" />
+            <element signature="e#9955#9956#0" expanded="true" />
+            <element signature="e#10073#10074#0" expanded="true" />
+            <element signature="e#10125#10126#0" expanded="true" />
+            <element signature="e#10225#10226#0" expanded="true" />
+            <element signature="e#10258#10259#0" expanded="true" />
+            <element signature="e#12188#12189#0" expanded="true" />
+            <element signature="e#12218#12219#0" expanded="true" />
+            <element signature="e#17333#17334#0" expanded="true" />
+            <element signature="e#17376#17377#0" expanded="true" />
+            <element signature="e#17453#17454#0" expanded="true" />
+            <element signature="e#17480#17481#0" expanded="true" />
+            <element signature="e#17580#17581#0" expanded="true" />
+            <element signature="e#17618#17619#0" expanded="true" />
+            <element signature="e#17722#17723#0" expanded="true" />
+            <element signature="e#17757#17758#0" expanded="true" />
+            <element signature="e#17869#17870#0" expanded="true" />
+            <element signature="e#17909#17910#0" expanded="true" />
+            <element signature="e#18027#18028#0" expanded="true" />
+            <element signature="e#18064#18065#0" expanded="true" />
           </folding>
         </state>
       </provider>
