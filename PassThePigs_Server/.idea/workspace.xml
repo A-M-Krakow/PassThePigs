@@ -19,15 +19,12 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="259">
+              <caret line="470" column="64" lean-forward="false" selection-start-line="470" selection-start-column="64" selection-end-line="470" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#Server#0" expanded="false" />
                 <element signature="class#Gra#0" expanded="false" />
-                <element signature="class#Rzut#0" expanded="false" />
-                <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-                <element signature="class#Uczestnik#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -44,7 +41,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>koniec</find>
       <find>rzekazKo()</find>
       <find>czyJestZwyciezca</find>
       <find>przekazK</find>
@@ -74,6 +70,7 @@
       <find>czyPecho</find>
       <find>pechowy =</find>
       <find>podliczPunkty</find>
+      <find>stykają</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -586,12 +583,12 @@
       <workItem from="1498670716056" duration="3778000" />
       <workItem from="1498741215499" duration="15338000" />
       <workItem from="1498765292340" duration="5168000" />
-      <workItem from="1498809835777" duration="428000" />
+      <workItem from="1498809835777" duration="1369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83660000" />
+    <option name="totallyTimeSpent" value="84601000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="6" y="0" width="1378" height="754" extended-state="0" />
@@ -657,9 +654,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -672,9 +666,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -687,9 +678,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -702,9 +690,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -717,9 +702,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -740,9 +722,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -763,9 +742,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -778,9 +754,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -793,9 +766,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -808,9 +778,6 @@
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -847,15 +814,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="259">
+          <caret line="470" column="64" lean-forward="false" selection-start-line="470" selection-start-column="64" selection-end-line="470" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Server#0" expanded="false" />
             <element signature="class#Gra#0" expanded="false" />
-            <element signature="class#Rzut#0" expanded="false" />
-            <element signature="method#podliczPunkty#0;class#Rzut#0" expanded="false" />
-            <element signature="class#Uczestnik#0" expanded="false" />
           </folding>
         </state>
       </provider>
