@@ -138,7 +138,7 @@ class Gra {
         wyslijDoWszystkich("*** koniec tury gracza <" + aktualny.podajNick() + "> ***");
         aktualny.przyznajPunkty();
                     /*dopisujemy graczowi punkty, które zdobył w turze */
-
+        pokazPunkty();
         if ((uczestnicy.indexOf(aktualny) + 1 == uczestnicy.size())) {
                         /*jeżeli aktualny gracz jest ostatni w kolejce */
             przekazKolejke(uczestnicy.get(0));
@@ -219,15 +219,14 @@ class Gra {
     }
 
     /*Metoda wyśtlająca podanemu graczowi tabelę z punktami */
-    public void pokazPunkty(Uczestnik uczestnik) {
-        wyslijDoJednego(uczestnik, "\n*****************");
-        wyslijDoJednego(uczestnik, "TABELA PUNKTÓW:");
+    public void pokazPunkty() {
 
-        for (Uczestnik gracz : uczestnicy) { // wyświetlamy nazwę i punkty każdego uczestnika z listy
+        StringBuilder lista = new StringBuilder();
 
-            wyslijDoJednego(uczestnik, "<"+ gracz.podajNick() + ">" +  ": " + gracz.podajWszystkiePunkty() + "pkt" );
+        for (Uczestnik gracz : uczestnicy) {
+            lista.append("<"+ gracz.podajNick() + ">" +  ": " + gracz.podajWszystkiePunkty() + "pkt" + ",");
         }
-        wyslijDoJednego(uczestnik, "*****************");
+        wyslijDoWszystkich("USERS:" + lista.toString());
     }
 
     /* Metoda ustawiająca pierwszego gracza w kolejce */
@@ -419,6 +418,7 @@ class Uczestnik extends Thread {
             if (gra.podajIloscGraczy() < gra.podajMaxIloscGraczy()) {
                 /* jeżeli w grze są jeszcze wolne miejsca */
                 gra.dodajUczestnika(this);
+                gra.pokazPunkty();
 
                 if (gra.podajIloscGraczy() != 1) {
                     /* jeżeli gracz nie jest pierwszym podłączonym */
@@ -448,14 +448,14 @@ class Uczestnik extends Thread {
                     /*przekazujemy  kolejkę do pierwszego w kolejce */
                 }
 
+
                 while (((linia = in.readLine()) != null) && (!gra.wskazCzyJestZwyciezca())) {
                     /* dopóki istnieje możliwość odebrania tekstu od gracza (połączenie)
                         oraz dopóki nie wyłonił się zwycięzca gry */
                     if ((linia.equalsIgnoreCase("/q")) || (gra.wskazCzyJestZwyciezca())) {
                         /* jeżeli gracz wpisze /q albo jeżeli zaistnieje zwycięzca */
                         break; // przechodzimy do opuszczania gry
-                    } else if (linia.equalsIgnoreCase("/p")) gra.pokazPunkty(this);
-                    /* jeżeli gracz wpisze /p, wyświetli mu się tabela z punktami */
+                    }
                     else if (gra.podajAktualnego() == this) {
                         /*jeżeli gracz jest aktualnym graczem */
                         if ((!linia.equalsIgnoreCase("/r"))) gra.graj();
@@ -463,8 +463,9 @@ class Uczestnik extends Thread {
                         else gra.zakonczTure();
                         /*jeżeli wpisał /r to kończymy jego turę */
                     }
-                } gra.opuscGre(this);    /*nie było tekstu wpisanego od uczestnika (brak połączenia)
-                                                    lub wyłonił się zwycięzca - opuszczamy grę */
+                }
+                gra.opuscGre(this);    /*nie było tekstu wpisanego od uczestnika (brak połączenia)
+                                                   lub wyłonił się zwycięzca - opuszczamy grę */
             }
             else {
                 out.println("Serwer jest pełny! Komenda /q kończy połączenie ");   /* gra nie miała wolnych miejsc, gracz nie został wpuszczony */

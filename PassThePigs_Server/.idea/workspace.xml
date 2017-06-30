@@ -11,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PassThePigs_Server$Server.coverage" NAME="Server Coverage Results" MODIFIED="1498749872833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PassThePigs_Server$Server.coverage" NAME="Server Coverage Results" MODIFIED="1498834705133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
@@ -19,43 +19,31 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="280" column="9" lean-forward="true" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="9" />
+            <state relative-caret-position="140">
+              <caret line="420" column="34" lean-forward="false" selection-start-line="420" selection-start-column="34" selection-end-line="420" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#Server#0" expanded="false" />
-                <element signature="e#2582#2583#0" expanded="true" />
-                <element signature="e#2661#2662#0" expanded="true" />
-                <element signature="e#3236#3237#0" expanded="true" />
-                <element signature="e#3276#3277#0" expanded="true" />
-                <element signature="e#3375#3376#0" expanded="true" />
-                <element signature="e#3412#3413#0" expanded="true" />
-                <element signature="e#3528#3529#0" expanded="true" />
-                <element signature="e#3559#3560#0" expanded="true" />
-                <element signature="e#4111#4112#0" expanded="true" />
-                <element signature="e#4150#4151#0" expanded="true" />
-                <element signature="e#8401#8402#0" expanded="true" />
-                <element signature="e#8453#8454#0" expanded="true" />
-                <element signature="e#9906#9907#0" expanded="true" />
-                <element signature="e#9955#9956#0" expanded="true" />
-                <element signature="e#10073#10074#0" expanded="true" />
-                <element signature="e#10125#10126#0" expanded="true" />
-                <element signature="e#10225#10226#0" expanded="true" />
-                <element signature="e#10258#10259#0" expanded="true" />
-                <element signature="e#12188#12189#0" expanded="true" />
-                <element signature="e#12218#12219#0" expanded="true" />
-                <element signature="e#17333#17334#0" expanded="true" />
-                <element signature="e#17376#17377#0" expanded="true" />
-                <element signature="e#17453#17454#0" expanded="true" />
-                <element signature="e#17480#17481#0" expanded="true" />
-                <element signature="e#17580#17581#0" expanded="true" />
-                <element signature="e#17618#17619#0" expanded="true" />
-                <element signature="e#17722#17723#0" expanded="true" />
-                <element signature="e#17757#17758#0" expanded="true" />
-                <element signature="e#17869#17870#0" expanded="true" />
-                <element signature="e#17909#17910#0" expanded="true" />
-                <element signature="e#18027#18028#0" expanded="true" />
-                <element signature="e#18064#18065#0" expanded="true" />
+                <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+                <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+                <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+                <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+                <element signature="method#graj#0;class#Gra#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KlientGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../Downloads/KlientGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1483#1852#0" expanded="true" />
+                <element signature="e#1851#1852#0" expanded="true" />
+                <element signature="e#5958#5959#0" expanded="true" />
+                <element signature="e#5980#5981#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,36 +60,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>koniec</find>
-      <find>rzekazKo()</find>
-      <find>czyJestZwyciezca</find>
-      <find>przekazK</find>
-      <find>20</find>
-      <find>punktywTurze</find>
-      <find>przyznajP</find>
-      <find>przyznaj</find>
-      <find>wszystkieP</find>
-      <find>przyznajPunkty</find>
-      <find>poczotkowaMaxIloscGraczy</find>
-      <find>uczestnik.</find>
-      <find>uczestnik.wszystkiePunkty</find>
-      <find>podajPunktyWTurze</find>
-      <find>ustawPunktyWTurze</find>
+      <find>wiado</find>
+      <find>wiadomosc</find>
+      <find>obsluga</find>
+      <find>readline</find>
+      <find>obslugaxx`</find>
+      <find>socket</find>
+      <find>obslu</find>
+      <find>polacz</find>
+      <find>pane</find>
+      <find>host</find>
+      <find>watekKlienta</find>
+      <find>run</find>
+      <find>window</find>
+      <find>while</find>
+      <find>null</find>
+      <find>wyslijDoWsz</find>
+      <find>list</find>
+      <find>maxIlosc</find>
+      <find>maxIloscgraczy = 0</find>
+      <find>maxIloscgraczy</find>
       <find>przekazKo</find>
-      <find>opuscGre</find>
+      <find>ustawPier</find>
+      <find>if</find>
+      <find>punkty</find>
+      <find>ZALOGOWANI</find>
+      <find>listaZalogowanych</find>
+      <find>pokazPunkty()</find>
+      <find>tokeni</find>
       <find>zakonczTure</find>
-      <find>przekazKol</find>
-      <find>indexOf</find>
-      <find>punktywRzucie</find>
-      <find>dla uczestników z listy uczestników</find>
-      <find>pierwszyWKo</find>
-      <find>kostki</find>
-      <find>rzut</find>
-      <find>rzut()</find>
-      <find>-1</find>
-      <find>czyPecho</find>
-      <find>pechowy =</find>
-      <find>podliczPunkty</find>
+      <find>pokazPunkty</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -113,6 +101,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/out/production/PassThePigs_Server/Server.class" />
+        <option value="$PROJECT_DIR$/../../../Downloads/KlientGUI.java" />
         <option value="$PROJECT_DIR$/src/Server.java" />
       </list>
     </option>
@@ -144,6 +133,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -158,8 +149,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -616,14 +605,15 @@
       <workItem from="1498765292340" duration="5168000" />
       <workItem from="1498809835777" duration="428000" />
       <workItem from="1498811599252" duration="58000" />
+      <workItem from="1498816962952" duration="14935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83718000" />
+    <option name="totallyTimeSpent" value="98653000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="0" width="1378" height="754" extended-state="0" />
+    <frame x="6" y="0" width="1378" height="754" extended-state="1" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -632,10 +622,10 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.50293684" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.50587374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30279502" sideWeight="0.49706313" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -668,7 +658,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="16" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -683,39 +673,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -726,39 +688,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -769,39 +703,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,39 +718,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -855,39 +733,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -898,39 +748,26 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -949,39 +786,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1000,39 +809,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1043,39 +824,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1086,39 +839,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1129,39 +854,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1196,45 +893,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/jre/lib/rt.jar!/sun/nio/cs/StreamDecoder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="280" column="9" lean-forward="true" selection-start-line="280" selection-start-column="9" selection-end-line="280" selection-end-column="9" />
+        <state relative-caret-position="141">
+          <caret line="232" column="0" lean-forward="false" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/net/SocketInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../Downloads/KlientGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Server#0" expanded="false" />
-            <element signature="e#2582#2583#0" expanded="true" />
-            <element signature="e#2661#2662#0" expanded="true" />
-            <element signature="e#3236#3237#0" expanded="true" />
-            <element signature="e#3276#3277#0" expanded="true" />
-            <element signature="e#3375#3376#0" expanded="true" />
-            <element signature="e#3412#3413#0" expanded="true" />
-            <element signature="e#3528#3529#0" expanded="true" />
-            <element signature="e#3559#3560#0" expanded="true" />
-            <element signature="e#4111#4112#0" expanded="true" />
-            <element signature="e#4150#4151#0" expanded="true" />
-            <element signature="e#8401#8402#0" expanded="true" />
-            <element signature="e#8453#8454#0" expanded="true" />
-            <element signature="e#9906#9907#0" expanded="true" />
-            <element signature="e#9955#9956#0" expanded="true" />
-            <element signature="e#10073#10074#0" expanded="true" />
-            <element signature="e#10125#10126#0" expanded="true" />
-            <element signature="e#10225#10226#0" expanded="true" />
-            <element signature="e#10258#10259#0" expanded="true" />
-            <element signature="e#12188#12189#0" expanded="true" />
-            <element signature="e#12218#12219#0" expanded="true" />
-            <element signature="e#17333#17334#0" expanded="true" />
-            <element signature="e#17376#17377#0" expanded="true" />
-            <element signature="e#17453#17454#0" expanded="true" />
-            <element signature="e#17480#17481#0" expanded="true" />
-            <element signature="e#17580#17581#0" expanded="true" />
-            <element signature="e#17618#17619#0" expanded="true" />
-            <element signature="e#17722#17723#0" expanded="true" />
-            <element signature="e#17757#17758#0" expanded="true" />
-            <element signature="e#17869#17870#0" expanded="true" />
-            <element signature="e#17909#17910#0" expanded="true" />
-            <element signature="e#18027#18028#0" expanded="true" />
-            <element signature="e#18064#18065#0" expanded="true" />
+            <element signature="e#1483#1852#0" expanded="true" />
+            <element signature="e#1851#1852#0" expanded="true" />
+            <element signature="e#5958#5959#0" expanded="true" />
+            <element signature="e#5980#5981#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="420" column="34" lean-forward="false" selection-start-line="420" selection-start-column="34" selection-end-line="420" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#dodajUczestnika#0;class#Gra#0" expanded="false" />
+            <element signature="method#szukajZwyciezcy#0;class#Gra#0" expanded="false" />
+            <element signature="method#przekazKolejke#0;class#Gra#0" expanded="false" />
+            <element signature="method#wyslijDoWszystkich#0;class#Gra#0" expanded="false" />
+            <element signature="method#graj#0;class#Gra#0" expanded="false" />
           </folding>
         </state>
       </provider>
