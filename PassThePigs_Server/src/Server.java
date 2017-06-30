@@ -41,6 +41,7 @@ public class Server {
     }
 }
 
+/*Obiekty klasy Gra to gry uruchomione na serwerze (w przyszłości będzie mogło być ich więcej niż jedna) */
 class Gra {
     private Vector<Uczestnik> uczestnicy = new Vector<>(); // definicja zmiennej przechowującej wszystkich uczestnikow gry
     private Uczestnik aktualny; // deklaracja uczestnika, który gra w danym momencie
@@ -211,8 +212,9 @@ class Gra {
         /* rzucamy figurkami */
         rzut.podajUlozenie();
         /*odczytujemy ułożenie figurek */
-        if (rzut.podliczPunkty() == -1) this.zakonczTure();
-        /*jeżeli punkty z rzutu wyniszą -1 (kostki stykały się) to gracz traci turę */
+        rzut.podliczPunkty();
+        if (rzut.czyPechowy()) this.zakonczTure();
+        /*jeżeli rzut był pechowy to gracz traci turę */
     }
 
     /*Metoda wyśtlająca podanemu graczowi tabelę z punktami */
@@ -220,7 +222,7 @@ class Gra {
         wyslijDoJednego(uczestnik, "\n*****************");
         wyslijDoJednego(uczestnik, "TABELA PUNKTÓW:");
 
-        for (Uczestnik gracz : uczestnicy) { // dla uczestników z listy uczestników
+        for (Uczestnik gracz : uczestnicy) { // wyświetlamy nazwę i punkty każdego uczestnika z listy
 
             wyslijDoJednego(uczestnik, "<"+ gracz.podajNick() + ">" +  ": " + gracz.podajWszystkiePunkty() + "pkt" );
         }
@@ -246,10 +248,13 @@ class Gra {
 
 }
 
+
+/*Każdy obiekt klasy Rzut to rzut dwiema figurkami wykonywany przez uczestnika*/
 class Rzut {
     Gra gra; //gra, do której należy rzut
     int punktywRzucie = 0;  //punkty zdobyte przy rzucie
-    boolean stykajaSie = false; // informacja, czy wyrzucone kostki się stykają
+    boolean stykajaSie = false; // informacja, czy wyrzucone figurki się stykają
+    boolean pechowy = false; // informacja, czy rzut był pechowy (kończący turę)
     String [] ulozeniaFigurek = new String[2]; // tablica przechowująca ułożenia 2 wyrzuconych figurek */
 
     String[] mozliweUlozenia = {  // tablica przechowująca wszystkie możliwe ułożenia figurki
@@ -279,6 +284,11 @@ class Rzut {
 
     }
 
+    /* Metoda zwracająca informację, czy rzut był pechowy */
+    public boolean czyPechowy(){
+        return pechowy;
+    }
+
     /* Metoda wyświetlająca ułożenie rzuconych figurek */
     public void podajUlozenie() {
         gra.wyslijDoWszystkich("Figurka 1 spadła na: " + ulozeniaFigurek[0]);
@@ -286,15 +296,15 @@ class Rzut {
     }
 
     /* Metoda zwracająca ilość zdobytych w rzucie punktów*/
-    public int podliczPunkty() {
+    public void podliczPunkty() {
 
         if (!stykajaSie) {
             /* jeżeli figurki się stykają */
             if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
                 /*jeżeli na jednej figurce jest lewy a na drugiej prawy bok (albo odwrotnie */
                 gra.wyslijDoWszystkich("Zerowanie punktów w turze!\n\n");
-                punktywRzucie=-1;  // punkty w rzucie są ustawiane na -1 bo stąd później wiemy, że trzeba zakończyć turę
-                gra.podajAktualnego().ustawPunktyWTurze(0); // do punktów w turze przypisujemy jednak 0
+                pechowy = true;   // rzut oznaczamy jako pechowy (kończący turę)
+                gra.podajAktualnego().ustawPunktyWTurze(0); // do punktów w turze przypisujemy  0
             }
             else {
                 if (ulozeniaFigurek[0].equals(ulozeniaFigurek[1])) //jeżeli figurki mają takie samo ułożenie
@@ -330,16 +340,15 @@ class Rzut {
         } else {  /*jeżeli figurki się stykały */
             gra.wyslijDoWszystkich("Figurki stykają się!");
             gra.wyslijDoWszystkich("Zerowanie wszystkich punktów!!\n\n");
-            punktywRzucie=-1; // punkty w rzucie są ustawiane na -1 bo stąd później wiemy, że trzeba zakończyć turę
-            gra.podajAktualnego().ustawPunktyWTurze(0);  // do punktów w turze przypisujemy jednak 0
+            pechowy = true; // rzut oznaczamy jako pechowy (kończący turę)
+            gra.podajAktualnego().ustawPunktyWTurze(0);  // do punktów w turze przypisujemy  0
             gra.podajAktualnego().ustawWszystkiePunkty(0); // wszystkie punkty gracza również zerujemy
         }
-        return punktywRzucie;
-        /*zwracamy wszystkie punkty zdobyte w tym rzucie */
     }
 
 }
 
+/*Obiekty klasy Uczestnik to gracze podłączeni do serwera gry */
 class Uczestnik extends Thread {
     private Gra gra;
     private String linia; // deklaracja napisu wpisanego przez użytkownika
