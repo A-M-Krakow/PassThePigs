@@ -147,13 +147,14 @@ class Gra {
                     for (Uczestnik gracz : ostateczneWyniki) {
                     /*porównujemy jego punkty z każdym innym uczestnikiem gry */
                         boolean przegrany = false; // zmienna przechowująca informację o przegranej gracza
-                        if (uczestnik.podajWszystkiePunkty() <= gracz.podajWszystkiePunkty()) {
+                        if (uczestnik.podajWszystkiePunkty() < gracz.podajWszystkiePunkty()) {
                         /*jeżeli gracz ma mniej punktów niż którykolwiek z innych graczy*/
                             przegrany = true;
                         }
                         if (!przegrany) {
                             wyslijDoJednego(uczestnik, YOU_WON_COMMAND); // wysłanie komendy jeżeli wygrał
                         } else wyslijDoJednego(uczestnik, YOU_LOST_COMMAND); // wysłanie komendy jeżeli przegrał
+                        przegrany = false;
                     }
             }
         }

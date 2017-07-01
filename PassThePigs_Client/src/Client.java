@@ -7,6 +7,7 @@ import java.util.*;
 
 public class Client extends JFrame implements CzatProtokol {
 
+    private static final String MESSAGE_PREFIX = "MESSAGE:";
     //GUI
     private JButton rzucaj, rezygnuj, polacz, rozlacz;
     private JPanel panelDol;
@@ -56,8 +57,6 @@ public class Client extends JFrame implements CzatProtokol {
         polacz.addActionListener(obsluga);
         rozlacz.addActionListener(obsluga);
 
-
-        wiadomosc.addKeyListener(obsluga);
         panelDol.add(rzucaj);
         panelDol.add(rezygnuj);
 
@@ -84,12 +83,12 @@ public class Client extends JFrame implements CzatProtokol {
 
     }
 
-    private class ObslugaZdarzen extends KeyAdapter implements ActionListener, CzatProtokol {
+    private class ObslugaZdarzen implements ActionListener, CzatProtokol {
 
         public void actionPerformed(ActionEvent e) {
 
             if (e.getActionCommand().equals("Połącz")) {
-                wyswietlKomunikat("Łączę z: " + nazwaSerwera + " na porcie: " + numerPortu + "...");
+                obsluzKomunikat(MESSAGE_PREFIX + "Łączę z: " + nazwaSerwera + " na porcie: " + numerPortu + "...");
                 polacz.setEnabled(false);
                 rozlacz.setEnabled(true);
                 host.setEnabled(false);
@@ -104,7 +103,7 @@ public class Client extends JFrame implements CzatProtokol {
                 polacz.setEnabled(true);
                 host.setEnabled(true);
                 port.setEnabled(true);
-                wyswietlKomunikat("ROZŁĄCZONO!");
+                obsluzKomunikat(MESSAGE_PREFIX + "ROZŁĄCZONO!");
             }
 
             if (e.getActionCommand().equals("Rzucaj")) {
@@ -116,17 +115,13 @@ public class Client extends JFrame implements CzatProtokol {
 
         }
 
-        public void keyReleased(KeyEvent e){
-            if(e.getKeyCode() == 10) {
-                watekKlienta.wyslij(wiadomosc.getText());
-            }
-        }
     }
 
     private class Klient extends Thread implements CzatProtokol{
         private Socket socket;
         private BufferedReader wejscie;
         private PrintWriter wyjscie;
+
 
         public void run(){
 
@@ -146,13 +141,13 @@ public class Client extends JFrame implements CzatProtokol {
                 else rozlacz.doClick();
 
                 while(polaczony &&  (lancuch = wejscie.readLine()) != null){
-                    wyswietlKomunikat(lancuch);
+                    obsluzKomunikat(lancuch);
                 }
 
             }
 
             catch (UnknownHostException e) {
-                wyswietlKomunikat("Błąd połączenia!");
+                obsluzKomunikat(MESSAGE_PREFIX + "Błąd połączenia!");
                 rozlacz.doClick();
                 polaczony = false;
 
@@ -177,47 +172,51 @@ public class Client extends JFrame implements CzatProtokol {
         }
     }
 
-    private void wyswietlKomunikat (String tekst){
+    private void obsluzKomunikat (String tekst){
 
-        if (tekst.startsWith(RESULT_COMMAND)) {
+        if (tekst.startsWith(MESSAGE_PREFIX)) {
+            komunikaty.append(tekst.substring(MESSAGE_PREFIX.length()) + "\n");
+            komunikaty.setCaretPosition(komunikaty.getDocument().getLength());
+        }
+        else if (tekst.startsWith(RESULT_COMMAND)) {
             tekst = tekst.substring(RESULT_COMMAND.length());
             String[] wyniki = tekst.split("-");
-            wyswietlKomunikat("\nFigurka 1 spadła na: " + wyniki[0] );
-            wyswietlKomunikat("Figurka 2 spadła na: " + wyniki[1]);
+            obsluzKomunikat(MESSAGE_PREFIX +"\nFigurka 1 spadła na: " + wyniki[0] );
+            obsluzKomunikat(MESSAGE_PREFIX +"Figurka 2 spadła na: " + wyniki[1]);
         }
         else if(tekst.equals(YOUR_TURN_COMMAND)){
             //Aktualizacja listy
-            wyswietlKomunikat("\nTWOJA KOLEJ!\n");
+            obsluzKomunikat(MESSAGE_PREFIX +"\nTWOJA KOLEJ!\n");
         }
 
         else if(tekst.equals(TURN_LOST_COMMAND)){
             //Aktualizacja listy
-            wyswietlKomunikat("\nZerowanie puktów w turze!\n");
+            obsluzKomunikat(MESSAGE_PREFIX +"\nZerowanie puktów w turze!\n");
         }
         else if (tekst.startsWith(GOT_POINTS_COMMAND)) {
-            wyswietlKomunikat("\nZdobyłeś " +  tekst.substring(GOT_POINTS_COMMAND.length()) + "punktów\n");
+            obsluzKomunikat(MESSAGE_PREFIX +"\nZdobyłeś " +  tekst.substring(GOT_POINTS_COMMAND.length()) + "  punktów\n");
         }
 
         else if (tekst.startsWith(ELSE_POINTS_COMMAND)) {
             tekst = tekst.substring(ELSE_POINTS_COMMAND.length());
             String[] punkty = tekst.split("-");
-            wyswietlKomunikat("\n" +  punkty[0] + " +" + punkty[1] + " punktów" );
+            obsluzKomunikat(MESSAGE_PREFIX +"\n" +  punkty[0] + " +" + punkty[1] + " punktów" );
         }
         else if (tekst.startsWith(TURN_POINTS_COMMAND)) {
-            wyswietlKomunikat("\nPunkty w tej turze: " +  tekst.substring(TURN_POINTS_COMMAND.length()) + "\n");
+            obsluzKomunikat(MESSAGE_PREFIX + "\nPunkty w tej turze: " +  tekst.substring(TURN_POINTS_COMMAND.length()) + "\n");
         }
         else if(tekst.equals(TOUCHING_COMMAND)){
             //Aktualizacja listy
-            wyswietlKomunikat("\nFigurki stykają się!");
-            wyswietlKomunikat("Zerowanie wszystkich punktów!\n");
+            obsluzKomunikat(MESSAGE_PREFIX +"\nFigurki stykają się!");
+            obsluzKomunikat(MESSAGE_PREFIX + "Zerowanie wszystkich punktów!\n");
         }
 
         else if (tekst.startsWith(THROWS_COMMAND)) {
-            wyswietlKomunikat("\nTeraz rzuca: " +  tekst.substring(THROWS_COMMAND.length()) + "\n");
+            obsluzKomunikat(MESSAGE_PREFIX + "\nTeraz rzuca: " +  tekst.substring(THROWS_COMMAND.length()) + "\n");
         }
 
         else if (tekst.startsWith(END_TURN_COMMAND)) {
-            wyswietlKomunikat("\n***Koniec tury gracza: " +  tekst.substring(END_TURN_COMMAND.length()) + "*** \n");
+            obsluzKomunikat(MESSAGE_PREFIX + "\n***Koniec tury gracza: " +  tekst.substring(END_TURN_COMMAND.length()) + "*** \n");
         }
 
         else if(tekst.startsWith(USERS_LIST_COMMAND)){
@@ -232,7 +231,7 @@ public class Client extends JFrame implements CzatProtokol {
 
         else if(tekst.equals(YOU_WON_COMMAND)){
             //Aktualizacja listy
-            JOptionPane.showMessageDialog(null, "WYGRAŁEŚ!");
+            JOptionPane.showMessageDialog(null,  "WYGRAŁEŚ!");
             rozlacz.doClick();
         }
 
@@ -243,18 +242,14 @@ public class Client extends JFrame implements CzatProtokol {
         }
 
         else if (tekst.startsWith(JOINED_COMMAND)) {
-            wyswietlKomunikat("\nDo gry dołączył: " +  tekst.substring(JOINED_COMMAND.length()) + "\n");
+            obsluzKomunikat(MESSAGE_PREFIX +"\nDo gry dołączył: " +  tekst.substring(JOINED_COMMAND.length()) + "\n");
         }
 
         else if(tekst.equals(CONNECTED_COMMAND)){
-            wyswietlKomunikat("\nPołączony z serwerem\n");
+            obsluzKomunikat(MESSAGE_PREFIX +"\nPołączony z serwerem\n");
         }
         else if (tekst.startsWith(WAIT_COMMAND)) {
-            wyswietlKomunikat("Czekaj na podłączenie wszystkich graczy!");
-        }
-        else {
-            komunikaty.append(tekst + "\n");
-            komunikaty.setCaretPosition(komunikaty.getDocument().getLength());
+            obsluzKomunikat(MESSAGE_PREFIX + "Czekaj na podłączenie wszystkich graczy!");
         }
     }
 
