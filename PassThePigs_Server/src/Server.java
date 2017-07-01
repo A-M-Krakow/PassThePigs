@@ -8,7 +8,7 @@ import java.util.Vector;
 /**
  * Created by anna on 09.05.2017.
  */
-public class Server implements CzatProtokol{
+public class Server implements PtpProtocol{
     private static ServerSocket server; // deklaracja zmiennej przechowującej socket na którym nasłuchuje serwer
     private static final int PORT = 23; // definicja portu, na którym nasłuchuje serwer
     private int maxIloscGraczy = 0;   // definicja zmiennej przechowującej ilość graczy na początkowe 0
@@ -367,7 +367,7 @@ class Rzut {
 }
 
 /*Obiekty klasy Uczestnik to gracze podłączeni do serwera gry */
-class Uczestnik extends Thread implements CzatProtokol{
+class Uczestnik extends Thread implements PtpProtocol{
     private Gra gra; // deklaracja gry, w której bierze udział uczestnik
     private String linia; // deklaracja napisu wpisanego przez użytkownika
     private int wszystkiePunkty = 0;  // wszystkie punkty gracza

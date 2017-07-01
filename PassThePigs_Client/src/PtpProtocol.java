@@ -1,4 +1,4 @@
-public interface CzatProtokol {
+public interface PtpProtocol {
    public static final String QUIT_COMMAND = "QUIT";
    public static final String RESIGN_COMMAND = "RESIGN";
    public static final String NICK_COMMAND = "NICK:";
@@ -17,7 +17,4 @@ public interface CzatProtokol {
    public static final String TURN_POINTS_COMMAND= "TURN_POINTS:";
    public static final String TOUCHING_COMMAND= "TOUCHING";
    public static final String CONNECTED_COMMAND= "CONNECTED";
-
-
-
 }

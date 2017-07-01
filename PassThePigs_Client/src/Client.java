@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-public class Client extends JFrame implements CzatProtokol {
+public class Client extends JFrame implements PtpProtocol {
 
-    private static final String MESSAGE_PREFIX = "MESSAGE:";
+    private static final String MESSAGE_PREFIX = "MESSAGE:";    //prefix dla wiadomości, które mają być wyświetlone na ekraie
     //GUI
     private JButton rzucaj, rezygnuj, polacz, rozlacz;
     private JPanel panelDol;
@@ -27,7 +27,6 @@ public class Client extends JFrame implements CzatProtokol {
     public Client(){
         super("Klient");
         setSize(600, 500);
-
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -60,7 +59,7 @@ public class Client extends JFrame implements CzatProtokol {
         panelDol.add(rzucaj);
         panelDol.add(rezygnuj);
 
-        addWindowListener(new WindowAdapter(){
+        addWindowListener(new WindowAdapter(){                  //Obsługa zdarzenia zamknięcia okna aplikacji
             public void windowClosing(WindowEvent e) {
                 rozlacz.doClick();
                 setVisible(false);
@@ -83,7 +82,7 @@ public class Client extends JFrame implements CzatProtokol {
 
     }
 
-    private class ObslugaZdarzen implements ActionListener, CzatProtokol {
+    private class ObslugaZdarzen implements ActionListener, PtpProtocol {
 
         public void actionPerformed(ActionEvent e) {
 
@@ -117,7 +116,7 @@ public class Client extends JFrame implements CzatProtokol {
 
     }
 
-    private class Klient extends Thread implements CzatProtokol{
+    private class Klient extends Thread implements PtpProtocol{
         private Socket socket;
         private BufferedReader wejscie;
         private PrintWriter wyjscie;
@@ -196,7 +195,6 @@ public class Client extends JFrame implements CzatProtokol {
         else if (tekst.startsWith(GOT_POINTS_COMMAND)) {
             obsluzKomunikat(MESSAGE_PREFIX +"\nZdobyłeś " +  tekst.substring(GOT_POINTS_COMMAND.length()) + "  punktów\n");
         }
-
         else if (tekst.startsWith(ELSE_POINTS_COMMAND)) {
             tekst = tekst.substring(ELSE_POINTS_COMMAND.length());
             String[] punkty = tekst.split("-");
