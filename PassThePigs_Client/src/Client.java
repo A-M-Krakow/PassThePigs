@@ -47,7 +47,7 @@ public class Client extends JFrame {
 
         listaZalogowanych = new DefaultListModel();
         zalogowani = new JList(listaZalogowanych);
-        zalogowani.setFixedCellWidth(120);
+        zalogowani.setFixedCellWidth(200);
 
         ObslugaZdarzen obsluga = new ObslugaZdarzen();
 
@@ -84,7 +84,7 @@ public class Client extends JFrame {
 
     }
 
-    private class ObslugaZdarzen extends KeyAdapter implements ActionListener {
+    private class ObslugaZdarzen extends KeyAdapter implements ActionListener, CzatProtokol {
 
         public void actionPerformed(ActionEvent e) {
 
@@ -98,7 +98,7 @@ public class Client extends JFrame {
                 watekKlienta.start();
             }
             if (e.getActionCommand().equals("Rozłącz")){
-                if (polaczony && zalogowany) watekKlienta.wyslij("/q");
+                if (polaczony && zalogowany) watekKlienta.wyslij(QUIT_COMMAND);
                 polaczony = false;
                 rozlacz.setEnabled(false);
                 polacz.setEnabled(true);
@@ -111,7 +111,7 @@ public class Client extends JFrame {
                 watekKlienta.wyslij("");
             }
             if (e.getActionCommand().equals("Rezygnuj")) {
-                watekKlienta.wyslij("/r");
+                watekKlienta.wyslij(RESIGN_COMMAND);
             }
 
         }
@@ -123,7 +123,7 @@ public class Client extends JFrame {
         }
     }
 
-    private class Klient extends Thread{
+    private class Klient extends Thread implements CzatProtokol{
         private Socket socket;
         private BufferedReader wejscie;
         private PrintWriter wyjscie;
@@ -142,7 +142,7 @@ public class Client extends JFrame {
                 String nick = JOptionPane.showInputDialog(null, "Podaj nick: ");
                 if (nick!=null) {
                     zalogowany = true;
-                    wyslij(nick);
+                    wyslij(NICK_COMMAND + nick);
                 }
                 else rozlacz.doClick();
 

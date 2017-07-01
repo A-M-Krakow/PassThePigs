@@ -19,26 +19,18 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-38">
-              <caret line="471" column="35" lean-forward="true" selection-start-line="471" selection-start-column="35" selection-end-line="471" selection-end-column="35" />
+            <state relative-caret-position="117">
+              <caret line="441" column="64" lean-forward="false" selection-start-line="441" selection-start-column="64" selection-end-line="441" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-                <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-                <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-                <element signature="e#18614#18615#0" expanded="true" />
-                <element signature="e#18653#18654#0" expanded="true" />
+                <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+                <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+                <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+                <element signature="e#18311#18312#0" expanded="true" />
+                <element signature="e#18350#18351#0" expanded="true" />
+                <element signature="e#21505#21506#0" expanded="true" />
+                <element signature="e#21533#21534#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KlientGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../Downloads/KlientGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -54,12 +46,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>while</find>
-      <find>null</find>
-      <find>wyslijDoWsz</find>
-      <find>list</find>
-      <find>maxIlosc</find>
-      <find>maxIloscgraczy = 0</find>
       <find>maxIloscgraczy</find>
       <find>przekazKo</find>
       <find>ustawPier</find>
@@ -84,6 +70,12 @@
       <find>stracił</find>
       <find>opuscGre</find>
       <find>Uczestnik</find>
+      <find>/q</find>
+      <find>/Q</find>
+      <find>przyznajPunkty</find>
+      <find>ZAKONCZtURE</find>
+      <find>/r</find>
+      <find>nick</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -601,12 +593,12 @@
       <workItem from="1498809835777" duration="428000" />
       <workItem from="1498811599252" duration="58000" />
       <workItem from="1498816962952" duration="14935000" />
-      <workItem from="1498888934595" duration="10039000" />
+      <workItem from="1498888934595" duration="13120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108692000" />
+    <option name="totallyTimeSpent" value="111773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -621,7 +613,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.50587374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30279502" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30279502" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869694" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -687,7 +679,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -702,11 +694,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -725,11 +719,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -740,11 +736,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,11 +753,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -770,11 +770,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -785,11 +787,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -800,11 +804,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,34 +821,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12699">
-          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -861,11 +846,38 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_111/src.zip!/java/util/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12699">
+          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,11 +888,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -891,11 +905,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -906,11 +922,13 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -970,15 +988,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret line="471" column="35" lean-forward="true" selection-start-line="471" selection-start-column="35" selection-end-line="471" selection-end-column="35" />
+        <state relative-caret-position="117">
+          <caret line="441" column="64" lean-forward="false" selection-start-line="441" selection-start-column="64" selection-end-line="441" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
-            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
-            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
-            <element signature="e#18614#18615#0" expanded="true" />
-            <element signature="e#18653#18654#0" expanded="true" />
+            <element signature="method#wprowadzIloscGraczy#0;class#Server#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0;class#Server#0" expanded="false" />
+            <element signature="e#18311#18312#0" expanded="true" />
+            <element signature="e#18350#18351#0" expanded="true" />
+            <element signature="e#21505#21506#0" expanded="true" />
+            <element signature="e#21533#21534#0" expanded="true" />
           </folding>
         </state>
       </provider>

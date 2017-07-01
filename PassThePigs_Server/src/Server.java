@@ -10,30 +10,37 @@ import java.util.Vector;
  */
 public class Server {
     private static ServerSocket server; // deklaracja zmiennej przechowującej socket na którym nasłuchuje serwer
-    private static final  int PORT = 23; // definicja portu, na którym nasłuchuje serwer
+    private static final int PORT = 23; // definicja portu, na którym nasłuchuje serwer
+    private int maxIloscGraczy = 0;   // definicja zmiennej przechowującej ilość graczy na początkowe 0
+    private Gra gra;
 
-    public static void main(String args[]){
-        int maxIloscGraczy = 0;    // definicja zmiennej przechowującej ilość graczy na początkowe 0
 
+    public Server() {
+        wprowadzIloscGraczy();
+        this.gra = new Gra(maxIloscGraczy);
+        ustanowPolaczenie();
+        /* Utworzenie nowej gry */
+    }
 
-        while (maxIloscGraczy < 2 || maxIloscGraczy>5)                  // dopóki ilość graczy nie będzie z zakresu 2 do 5
+    private void wprowadzIloscGraczy() {
+        while (maxIloscGraczy < 2 || maxIloscGraczy > 5)                  // dopóki ilość graczy nie będzie z zakresu 2 do 5
         {
             System.out.print("Podaj ilość graczy (od 2 do 5):");  // serwer prosi o jej wprowadzenie
             Scanner sc = new Scanner(System.in);
-            if (sc.hasNextInt()) maxIloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej maxIloscGraczy jeśli jest liczbą całkowitą
+            if (sc.hasNextInt())
+                maxIloscGraczy = sc.nextInt();        //dopisywanie liczby do zmiennej maxIloscGraczy jeśli jest liczbą całkowitą
         }
-        Gra gra = new Gra(maxIloscGraczy);
-        /* Utworzenie nowej gry */
-
-        try
-        {
+        this.maxIloscGraczy = maxIloscGraczy;
+    }
+    private void ustanowPolaczenie() {
+        try {
             server = new ServerSocket(PORT); // definicja socketu serwera na odpowiednim porcie
             System.out.println("Serwer gry uruchomiony na porcie: " + PORT);
 
-            while (true){
+            while (true) {
                 Socket socket = server.accept(); // włączenie akceptowania nowego połączenia
                 InetAddress addr = socket.getInetAddress(); // definicja zmiennej przechowującej adres połączonego klienta
-                System.out.println("Połączenie z adresu: "+ addr.getHostName() + " [" + addr.getHostAddress() + "]");
+                System.out.println("Połączenie z adresu: " + addr.getHostName() + " [" + addr.getHostAddress() + "]");
                 new Uczestnik(socket, gra).start(); // uruchomienie obsługi gry dla uczestnika na jego sockecie
             }
 
@@ -41,7 +48,9 @@ public class Server {
             e.printStackTrace();
         }
     }
-}
+
+
+
 
 /*Obiekty klasy Gra to gry uruchomione na serwerze (w przyszłości będzie mogło być ich więcej niż jedna) */
 class Gra {
@@ -138,11 +147,7 @@ class Gra {
         if (!wskazCzyJestZwyciezca()) {
             /* jeżeli nie wyłonił się zwycięzca */
             wyslijDoJednego(this.aktualny, "\n\nTWOJA KOLEJ!");
-            wyslijDoJednego(this.aktualny, "[enter] - rzucaj");
-            wyslijDoJednego(this.aktualny, "/r - rezygnuj");
             wyslijDoInnych(this.aktualny, "\n\nTeraz rzuca: " + "<" + this.aktualny.podajNick() + ">");
-            wyslijDoWszystkich("/p - punkty");
-            wyslijDoWszystkich("/q - wyjscie");
         }
         else {
             /* jeżeli wyłonił się zwycięzca */
@@ -354,10 +359,6 @@ class Rzut {
                 /* dodanie  punktów w rzucie do punktów w turze */
 
                 gra.wyslijDoJednego(gra.podajAktualnego(), "\nPunkty w tej turze:" + gra.podajAktualnego().podajPunktyWTurze());
-                gra.wyslijDoJednego(gra.podajAktualnego(), "[enter] - rzucaj");
-                gra.wyslijDoJednego(gra.podajAktualnego(), "/p - wszystkie punkty");
-                gra.wyslijDoJednego(gra.podajAktualnego(), "/r - rezygnuj");
-                gra.wyslijDoJednego(gra.podajAktualnego(), "/q - wyjdź\n");
                 gra.wyslijDoInnych(gra.podajAktualnego(), "<" + gra.podajAktualnego().podajNick() + "> +"  + punktywRzucie + " punktów !");
 
             }
@@ -373,7 +374,7 @@ class Rzut {
 }
 
 /*Obiekty klasy Uczestnik to gracze podłączeni do serwera gry */
-class Uczestnik extends Thread {
+class Uczestnik extends Thread implements CzatProtokol{
     private Gra gra; // deklaracja gry, w której bierze udział uczestnik
     private String linia; // deklaracja napisu wpisanego przez użytkownika
     private int wszystkiePunkty = 0;  // wszystkie punkty gracza
@@ -436,23 +437,25 @@ class Uczestnik extends Thread {
         try {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
-            this.wyslijWiadomosc("Połączony z serwerem. Komenda /q kończy połączenie.");
-            nick = in.readLine(); // pobranie nicku od użytkownika
+            this.wyslijWiadomosc("Połączony z serwerem!");
 
-            if (gra.czySaMiejsca()) {
+            if ((linia = in.readLine()).startsWith(NICK_COMMAND)){
+                nick = linia.substring(NICK_COMMAND.length()); // pobranie nicku od użytkownika
+
+                if (gra.czySaMiejsca()) {
                 /* jeżeli w grze są jeszcze wolne miejsca */
-                gra.dodajUczestnika(this);
-                gra.pokazPunkty();
-                zalogowany=true;
-                if(!gra.czySaWszyscy()) out.println("Czekaj na dołączenie wszystkich graczy!");
-                else {
-                    int wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
-                    gra.ustawPierwszego(gra.podajListeUczestnikow().get(wylosowany));
-                    gra.przekazKolejke(gra.podajListeUczestnikow().get(wylosowany));
-                }
+                    gra.dodajUczestnika(this);
+                    gra.pokazPunkty();
+                    zalogowany = true;
+                    if (!gra.czySaWszyscy()) out.println("Czekaj na dołączenie wszystkich graczy!");
+                    else {
+                        int wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
+                        gra.ustawPierwszego(gra.podajListeUczestnikow().get(wylosowany));
+                        gra.przekazKolejke(gra.podajListeUczestnikow().get(wylosowany));
+                    }
                     while ((linia = in.readLine()) != null) {
                     /*dopóki jest dostępna linia tekstu przysłana od strony gracza */
-                        if (linia.equals("/q")) {
+                        if (linia.equals(QUIT_COMMAND)) {
                         /*jeżeli gracz wybrał wyjście z gry*/
                             break;
                         /*przestajemy odczytywać jego dane i przechodzimy do opuszczania gry */
@@ -460,7 +463,7 @@ class Uczestnik extends Thread {
                         /*jeżeli gracz nie wybrał wyjścia z gry */
                             if (gra.podajAktualnego() == this) {
                             /*jeżeli gracz jest aktualnie grającym */
-                                if (!linia.equals("/r"))
+                                if (!linia.equals(RESIGN_COMMAND))
                             /*jeżeli nie wybrał rezygnacji z kolejki */ {
                                     gra.graj();
                                 /*rozpoczyna swoją kolejkę */
@@ -469,13 +472,12 @@ class Uczestnik extends Thread {
                             }
                         }
                     }
-                gra.opuscGre(this);
-            }
-            else {
-                out.println("Serwer jest pełny! Komenda /q kończy połączenie ");   /* gra nie miała wolnych miejsc, gracz nie został wpuszczony */
-                while ((linia = in.readLine())!= null) {
-                    if (linia.equalsIgnoreCase("/q")) break;
-                    /*jeżeli gracz wpisze /q zakończy połączenie */
+                    gra.opuscGre(this);
+                } else {
+                    out.println("Serwer jest pełny!");   /* gra nie miała wolnych miejsc, gracz nie został wpuszczony */
+                    while ((linia = in.readLine()) != null) {
+                        if (linia.equalsIgnoreCase(QUIT_COMMAND)) break;
+                    }
                 }
             }
         } catch (IOException e) {
@@ -490,5 +492,9 @@ class Uczestnik extends Thread {
                 e.printStackTrace();
             }
         }
+    }
+}
+    public static void main (String[] args) {
+        new Server();
     }
 }
