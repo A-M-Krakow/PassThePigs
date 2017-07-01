@@ -192,9 +192,10 @@ public class Client extends JFrame {
             System.out.println(listaZalogowanych);
         }
 
-        komunikaty.append(tekst + "\n");
-        komunikaty.setCaretPosition(komunikaty.getDocument().getLength());
-
+        else {
+            komunikaty.append(tekst + "\n");
+            komunikaty.setCaretPosition(komunikaty.getDocument().getLength());
+        }
     }
 
     public static void main (String[] args) {

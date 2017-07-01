@@ -46,7 +46,7 @@ public class Server {
 /*Obiekty klasy Gra to gry uruchomione na serwerze (w przyszłości będzie mogło być ich więcej niż jedna) */
 class Gra {
     private Vector<Uczestnik> uczestnicy = new Vector<>(); // definicja zmiennej przechowującej wszystkich uczestnikow gry
-    private Uczestnik aktualny; // deklaracja uczestnika, który gra w danym momencie
+    private Uczestnik aktualny = null; // deklaracja uczestnika, który gra w danym momencie
     private Uczestnik pierwszyWKolejce; //deklaracja uczestnika, który rozpoczyna kolejkę
     private int poczatkowaMaxIloscGraczy; //deklaracja maksymalnej ilości graczy na początku gry
     private int maxIloscGraczy; //deklaracja maksymalnej ilości graczy, która będzie aktualizowana jeżeli gracze opuszczą grę
@@ -62,7 +62,7 @@ class Gra {
         uczestnicy.add(uczestnik);
         System.out.println("Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");                         // to wyświetlamy na serwerze
         System.out.println("Połączonych graczy: " + this.podajIloscGraczy() + "/" + maxIloscGraczy);
-        wyslijDoInnych(aktualny, "Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");
+        wyslijDoWszystkich("Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");
     }
 
     /* Metoda zwracająca ilość graczy w grze */
@@ -75,6 +75,12 @@ class Gra {
         return maxIloscGraczy;
     }
 
+
+    /* Metoda zwracająca uczestnika, który aktualnie gra */
+    public synchronized void ustawAktualnego(Uczestnik nowyAktualny) {
+
+        this.aktualny = nowyAktualny;
+    }
 
     /* Metoda zwracająca uczestnika, który aktualnie gra */
     public synchronized Uczestnik podajAktualnego() {
@@ -94,6 +100,27 @@ class Gra {
         }
     }
 
+    /*Metoda zwracająca info czy są wolne miejsca */
+    public boolean czySaMiejsca()
+    {
+        if (podajIloscGraczy() < podajMaxIloscGraczy()) return true;
+        else return false;
+    }
+
+    public boolean czySaWszyscy()
+    {
+        if  (podajIloscGraczy() == podajMaxIloscGraczy()) return true;
+        else return false;
+    }
+
+
+
+
+
+
+
+
+
     /*Metoda zwracająca info czy jest zwycięzca */
     public boolean wskazCzyJestZwyciezca()
     {
@@ -102,7 +129,7 @@ class Gra {
 
     /* Metoda przekazująca kolejkę do następnego uczestnika */
     public synchronized  void przekazKolejke(Uczestnik nowyAktualny) {
-        this.aktualny = nowyAktualny ;
+        ustawAktualnego(nowyAktualny) ;
         /*aktualny gracz zmienia się na następnego gracza */
 
         if(aktualny==pierwszyWKolejce) szukajZwyciezcy();
@@ -358,6 +385,7 @@ class Uczestnik extends Thread {
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
     private PrintWriter out; // deklaracja strumienia danych wysyłanych do uczestnika
     private String nick; // deklaracja nazwy uczestnika
+    private boolean pierwszyPolaczony = true;
 
     public Uczestnik(Socket socket, Gra gra) { // konstruktor nowego gracza (oznaczenie gry oraz socketu, na którym jest jego połączenie)
         this.gra = gra;
@@ -412,60 +440,42 @@ class Uczestnik extends Thread {
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
             this.wyslijWiadomosc("Połączony z serwerem. Komenda /q kończy połączenie.");
             this.wyslijWiadomosc("Podaj swój nick: ");
-
             nick = in.readLine(); // pobranie nicku od użytkownika
 
-            if (gra.podajIloscGraczy() < gra.podajMaxIloscGraczy()) {
+            if (gra.czySaMiejsca()) {
                 /* jeżeli w grze są jeszcze wolne miejsca */
                 gra.dodajUczestnika(this);
                 gra.pokazPunkty();
-
-                if (gra.podajIloscGraczy() != 1) {
-                    /* jeżeli gracz nie jest pierwszym podłączonym */
-                    poczatek = false;  //oznaczamy, że gra zaczęła się już wcześniej
-                }
-
-                if (poczatek) {
-                    /* jeżeli gra dopiero teraz się zaczęła */
+                if(!gra.czySaWszyscy()) out.println("Czekaj na dołączenie wszystkich graczy!");
+                else {
                     wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
-                    //losujemy numer gracza, który zacznie grę
-                }
-
-
-                if (gra.podajIloscGraczy() != gra.podajMaxIloscGraczy()) {
-                    /* jeżeli wszyscy gracze jeszcze  nie dołączyli */
-                    out.println("Czekaj na dołączenie wszystkich graczy!");
-
-                    while (gra.podajIloscGraczy() != gra.podajMaxIloscGraczy()) {
-                    /* czekamy aż wszyscy dołączą */}
-                }
-
-                if (poczatek) {
-                    /*jeżeli gra dopiero się zaczęła */
-                    gra.ustawPierwszego(gra.podajListeUczestnikow().get(wylosowany))
-                    /*ustawiamy, kto będzie pierwszy w kolejce (wcześniej wylosowany numer*/;
+                    gra.ustawPierwszego(gra.podajListeUczestnikow().get(wylosowany));
                     gra.przekazKolejke(gra.podajListeUczestnikow().get(wylosowany));
-                    /*przekazujemy  kolejkę do pierwszego w kolejce */
                 }
 
-
-                while (((linia = in.readLine()) != null) && (!gra.wskazCzyJestZwyciezca())) {
-                    /* dopóki istnieje możliwość odebrania tekstu od gracza (połączenie)
-                        oraz dopóki nie wyłonił się zwycięzca gry */
-                    if ((linia.equalsIgnoreCase("/q")) || (gra.wskazCzyJestZwyciezca())) {
-                        /* jeżeli gracz wpisze /q albo jeżeli zaistnieje zwycięzca */
-                        break; // przechodzimy do opuszczania gry
-                    }
-                    else if (gra.podajAktualnego() == this) {
-                        /*jeżeli gracz jest aktualnym graczem */
-                        if ((!linia.equalsIgnoreCase("/r"))) gra.graj();
-                        /* i jeżeli gracz nie wpisze /r to rozpoczynamy granie */
-                        else gra.zakonczTure();
-                        /*jeżeli wpisał /r to kończymy jego turę */
+                while ((linia = in.readLine())!= null) {
+                    /*dopóki jest dostępna linia tekstu przysłana od strony gracza */
+                    if (linia.equals("/q")) {
+                        /*jeżeli gracz wybrał wyjście z gry*/
+                        break;
+                        /*przestajemy odczytywać jego dane i przechodzimy do opuszczania gry */
+                    } else {
+                        /*jeżeli gracz nie wybrał wyjścia z gry */
+                        if (gra.podajAktualnego() == this){
+                            /*jeżeli gracz jest aktualnie grającym */
+                            if (!linia.equals("/r"))
+                            /*jeżeli nie wybrał rezygnacji z kolejki */
+                            {
+                                gra.graj();
+                                /*rozpoczyna swoją kolejkę */
+                            }
+                            else gra.zakonczTure();
+                            /*w przeciwnym wypadku kończy się jego kolejka */
+                        }
                     }
                 }
-                gra.opuscGre(this);    /*nie było tekstu wpisanego od uczestnika (brak połączenia)
-                                                   lub wyłonił się zwycięzca - opuszczamy grę */
+                System.out.println(this.podajNick() + " poszedł stąd!");
+                gra.opuscGre(this);
             }
             else {
                 out.println("Serwer jest pełny! Komenda /q kończy połączenie ");   /* gra nie miała wolnych miejsc, gracz nie został wpuszczony */
