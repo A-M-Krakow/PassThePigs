@@ -62,7 +62,11 @@ public class Client extends JFrame {
 
         addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent e) {
-                rozlacz.doClick();
+                polaczony = false;
+                rozlacz.setEnabled(false);
+                polacz.setEnabled(true);
+                host.setEnabled(true);
+                port.setEnabled(true);;
                 setVisible(false);
                 System.exit(0);
             }
@@ -151,15 +155,23 @@ public class Client extends JFrame {
 
             catch (UnknownHostException e) {
                 wyswietlKomunikat("Błąd połączenia!");
+                polaczony = false;
+                rozlacz.setEnabled(false);
+                polacz.setEnabled(true);
+                host.setEnabled(true);
+                port.setEnabled(true);
+                polaczony = false;
             }
             catch (IOException e) {
                 e.printStackTrace();
             }finally {
                 try {
-                    wejscie.close(); // zamknięcie wejścia
-                    wyjscie.close(); // zamknięcie wyjścia
-                    socket.close(); // zamknięcie socketu
-                } catch (IOException e) {
+                    if (polaczony) {
+                        wejscie.close(); // zamknięcie wejścia
+                        wyjscie.close(); // zamknięcie wyjścia
+                        socket.close(); // zamknięcie socketu
+                    }
+                } catch (IOException  e) {
                     e.printStackTrace();
                 }
             }
@@ -178,18 +190,12 @@ public class Client extends JFrame {
             StringTokenizer gracze = new StringTokenizer(tekst.substring("USERS:".length()), ",");
 
             listaZalogowanych.clear();
-            //while(uzytkownicy.hasMoreTokens())
-            //	listaZalogowanych.addElement(uzytkownicy.nextToken());
-
-            System.out.println(gracze.countTokens());
-            System.out.println(listaZalogowanych);
 
             int iloscOsob = gracze.countTokens();
             for(int i = 0; i < iloscOsob; i++) {
                 listaZalogowanych.add(i, gracze.nextToken());
             }
 
-            System.out.println(listaZalogowanych);
         }
 
         else {
