@@ -159,7 +159,6 @@ public class Client extends JFrame {
 
             }
             catch (IOException e) {
-                e.printStackTrace();
             }finally {
                 try {
                     if (polaczony) {

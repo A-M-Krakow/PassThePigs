@@ -181,12 +181,9 @@ class Gra {
 
     /*Metoda usuwająca gracza z gry */
     public synchronized void opuscGre(Uczestnik uczestnik){
-
-
         if(pierwszyWKolejce == uczestnik && podajIloscGraczy()>1)
         /*jeżeli opuszczający był pierwszym w kolejce i jest więcej niż jeden gracz*/
         {
-
             if (uczestnicy.indexOf(uczestnik)+1 == podajIloscGraczy())
                 /*jeżeli opuszczający był ostatni na liście */
                 ustawPierwszego(uczestnicy.get(0));
@@ -194,7 +191,6 @@ class Gra {
             else ustawPierwszego(uczestnicy.get(uczestnicy.indexOf(uczestnik) +1));
                  /* w przeciwnym wypadku, pierwszym w kolejce zostaje następny na liście */
         }
-
         if (uczestnik == aktualny) {
             zakonczTure();
         }
@@ -211,6 +207,7 @@ class Gra {
             czyJestZwyciezca = false;
             /*dodawana jest informacja o braku zwycięzcy w grze */
         }
+        uczestnik.wyloguj();
     }
 
     /* Metoda wysyłająca wiadomość do wszystkich graczy w grze */
@@ -385,7 +382,7 @@ class Uczestnik extends Thread {
     private BufferedReader in; // deklaracja strumienia danych otrzymanych od uczestnika
     private PrintWriter out; // deklaracja strumienia danych wysyłanych do uczestnika
     private String nick; // deklaracja nazwy uczestnika
-    private boolean pierwszyPolaczony = true;
+    private boolean zalogowany = false;
 
     public Uczestnik(Socket socket, Gra gra) { // konstruktor nowego gracza (oznaczenie gry oraz socketu, na którym jest jego połączenie)
         this.gra = gra;
@@ -393,8 +390,7 @@ class Uczestnik extends Thread {
     }
 
     /* Metoda dodająca punkty z tury do wszystkich punktów */
-    public void przyznajPunkty()
-    {
+    public void przyznajPunkty() {
         this.wszystkiePunkty+=this.punktyWTurze;
         this.punktyWTurze = 0;
     }
@@ -430,11 +426,13 @@ class Uczestnik extends Thread {
         punktyWTurze = punkty;
     }
 
+    /*Metoda zaznaczająca, że gracz nie jest zalogowany */
+    public void wyloguj(){
+        this.zalogowany = false;
+    }
+
 
     public void run() {
-
-        int wylosowany = 0;
-        boolean poczatek = true;
         try {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
@@ -445,34 +443,32 @@ class Uczestnik extends Thread {
                 /* jeżeli w grze są jeszcze wolne miejsca */
                 gra.dodajUczestnika(this);
                 gra.pokazPunkty();
+                zalogowany=true;
                 if(!gra.czySaWszyscy()) out.println("Czekaj na dołączenie wszystkich graczy!");
                 else {
-                    wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
+                    int wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
                     gra.ustawPierwszego(gra.podajListeUczestnikow().get(wylosowany));
                     gra.przekazKolejke(gra.podajListeUczestnikow().get(wylosowany));
                 }
-
-                while ((linia = in.readLine())!= null) {
+                    while ((linia = in.readLine()) != null) {
                     /*dopóki jest dostępna linia tekstu przysłana od strony gracza */
-                    if (linia.equals("/q")) {
+                        if (linia.equals("/q")) {
                         /*jeżeli gracz wybrał wyjście z gry*/
-                        break;
+                            break;
                         /*przestajemy odczytywać jego dane i przechodzimy do opuszczania gry */
-                    } else {
+                        } else {
                         /*jeżeli gracz nie wybrał wyjścia z gry */
-                        if (gra.podajAktualnego() == this){
+                            if (gra.podajAktualnego() == this) {
                             /*jeżeli gracz jest aktualnie grającym */
-                            if (!linia.equals("/r"))
-                            /*jeżeli nie wybrał rezygnacji z kolejki */
-                            {
-                                gra.graj();
+                                if (!linia.equals("/r"))
+                            /*jeżeli nie wybrał rezygnacji z kolejki */ {
+                                    gra.graj();
                                 /*rozpoczyna swoją kolejkę */
-                            }
-                            else gra.zakonczTure();
+                                } else gra.zakonczTure();
                             /*w przeciwnym wypadku kończy się jego kolejka */
+                            }
                         }
                     }
-                }
                 gra.opuscGre(this);
             }
             else {
@@ -483,9 +479,10 @@ class Uczestnik extends Thread {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Gracz " + this.podajNick() + " stracił połączenie");
         }finally {
             try {
+                if (zalogowany) gra.opuscGre(this);
                 in.close(); // zamknięcie wejścia
                 out.close(); // zamknięcie wyjścia
                 socket.close(); // zamknięcie socketu

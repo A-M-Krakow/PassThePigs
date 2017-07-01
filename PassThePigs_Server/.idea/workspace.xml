@@ -19,10 +19,15 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="440" column="88" lean-forward="false" selection-start-line="440" selection-start-column="88" selection-end-line="440" selection-end-column="88" />
+            <state relative-caret-position="-38">
+              <caret line="471" column="35" lean-forward="true" selection-start-line="471" selection-start-column="35" selection-end-line="471" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+                <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+                <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+                <element signature="e#18614#18615#0" expanded="true" />
+                <element signature="e#18653#18654#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,10 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>host</find>
-      <find>watekKlienta</find>
-      <find>run</find>
-      <find>window</find>
       <find>while</find>
       <find>null</find>
       <find>wyslijDoWsz</find>
@@ -79,6 +80,10 @@
       <find>aktualnego</find>
       <find>aktualny =</find>
       <find>przekazKolejke</find>
+      <find>podaj swój</find>
+      <find>stracił</find>
+      <find>opuscGre</find>
+      <find>Uczestnik</find>
     </findStrings>
   </component>
   <component name="GradleLocalSettings">
@@ -596,15 +601,16 @@
       <workItem from="1498809835777" duration="428000" />
       <workItem from="1498811599252" duration="58000" />
       <workItem from="1498816962952" duration="14935000" />
-      <workItem from="1498888934595" duration="9092000" />
+      <workItem from="1498888934595" duration="10039000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107745000" />
+    <option name="totallyTimeSpent" value="108692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -615,7 +621,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.50587374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30279502" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30279502" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869694" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -696,6 +702,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -714,6 +725,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -724,6 +740,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -734,6 +755,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -744,6 +770,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -754,6 +785,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -764,6 +800,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,6 +815,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -792,6 +838,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -810,6 +861,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -820,6 +876,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -830,6 +891,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -840,6 +906,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -899,10 +970,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="440" column="88" lean-forward="false" selection-start-line="440" selection-start-column="88" selection-end-line="440" selection-end-column="88" />
+        <state relative-caret-position="-38">
+          <caret line="471" column="35" lean-forward="true" selection-start-line="471" selection-start-column="35" selection-end-line="471" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#opuscGre#0;class#Gra#0" expanded="false" />
+            <element signature="method#Uczestnik#0;class#Uczestnik#0" expanded="false" />
+            <element signature="method#przyznajPunkty#0;class#Uczestnik#0" expanded="false" />
+            <element signature="e#18614#18615#0" expanded="true" />
+            <element signature="e#18653#18654#0" expanded="true" />
           </folding>
         </state>
       </provider>
