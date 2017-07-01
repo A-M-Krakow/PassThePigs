@@ -20,6 +20,7 @@ public class Client extends JFrame {
     private String nazwaSerwera = "localhost";
     private int numerPortu = 23;
     private boolean polaczony = false;
+    private boolean zalogowany = false;
     private Klient watekKlienta;
 
     public Client(){
@@ -62,11 +63,7 @@ public class Client extends JFrame {
 
         addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent e) {
-                polaczony = false;
-                rozlacz.setEnabled(false);
-                polacz.setEnabled(true);
-                host.setEnabled(true);
-                port.setEnabled(true);;
+                rozlacz.doClick();
                 setVisible(false);
                 System.exit(0);
             }
@@ -93,23 +90,21 @@ public class Client extends JFrame {
 
             if (e.getActionCommand().equals("Połącz")) {
                 wyswietlKomunikat("Łączę z: " + nazwaSerwera + " na porcie: " + numerPortu + "...");
-                polaczony = true;
                 polacz.setEnabled(false);
                 rozlacz.setEnabled(true);
                 host.setEnabled(false);
                 port.setEnabled(false);
                 watekKlienta = new Klient();
                 watekKlienta.start();
-                //repaint();
             }
             if (e.getActionCommand().equals("Rozłącz")){
-                watekKlienta.wyslij("/q");
+                if (polaczony && zalogowany) watekKlienta.wyslij("/q");
                 polaczony = false;
                 rozlacz.setEnabled(false);
                 polacz.setEnabled(true);
                 host.setEnabled(true);
                 port.setEnabled(true);
-                setVisible(false);
+                wyswietlKomunikat("ROZŁĄCZONO!");
             }
 
             if (e.getActionCommand().equals("Rzucaj")) {
@@ -145,7 +140,11 @@ public class Client extends JFrame {
 
                 String lancuch = null;
                 String nick = JOptionPane.showInputDialog(null, "Podaj nick: ");
-                wyslij(nick);
+                if (nick!=null) {
+                    zalogowany = true;
+                    wyslij(nick);
+                }
+                else rozlacz.doClick();
 
                 while(polaczony &&  (lancuch = wejscie.readLine()) != null){
                     wyswietlKomunikat(lancuch);
@@ -155,12 +154,9 @@ public class Client extends JFrame {
 
             catch (UnknownHostException e) {
                 wyswietlKomunikat("Błąd połączenia!");
+                rozlacz.doClick();
                 polaczony = false;
-                rozlacz.setEnabled(false);
-                polacz.setEnabled(true);
-                host.setEnabled(true);
-                port.setEnabled(true);
-                polaczony = false;
+
             }
             catch (IOException e) {
                 e.printStackTrace();

@@ -439,7 +439,6 @@ class Uczestnik extends Thread {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
             this.wyslijWiadomosc("Połączony z serwerem. Komenda /q kończy połączenie.");
-            this.wyslijWiadomosc("Podaj swój nick: ");
             nick = in.readLine(); // pobranie nicku od użytkownika
 
             if (gra.czySaMiejsca()) {
@@ -474,7 +473,6 @@ class Uczestnik extends Thread {
                         }
                     }
                 }
-                System.out.println(this.podajNick() + " poszedł stąd!");
                 gra.opuscGre(this);
             }
             else {
@@ -484,7 +482,6 @@ class Uczestnik extends Thread {
                     /*jeżeli gracz wpisze /q zakończy połączenie */
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
