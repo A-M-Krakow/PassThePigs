@@ -8,7 +8,7 @@ import java.util.Vector;
 /**
  * Created by anna on 09.05.2017.
  */
-public class Server {
+public class Server implements CzatProtokol{
     private static ServerSocket server; // deklaracja zmiennej przechowującej socket na którym nasłuchuje serwer
     private static final int PORT = 23; // definicja portu, na którym nasłuchuje serwer
     private int maxIloscGraczy = 0;   // definicja zmiennej przechowującej ilość graczy na początkowe 0
@@ -71,7 +71,7 @@ class Gra {
         uczestnicy.add(uczestnik);
         System.out.println("Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");                         // to wyświetlamy na serwerze
         System.out.println("Połączonych graczy: " + this.podajIloscGraczy() + "/" + maxIloscGraczy);
-        wyslijDoWszystkich("Do gry dołączył: " + "<" + uczestnik.podajNick() + ">");
+        wyslijDoWszystkich(JOINED_COMMAND +  uczestnik.podajNick());
     }
 
     /* Metoda zwracająca ilość graczy w grze */
@@ -97,8 +97,7 @@ class Gra {
     }
 
     /* Metoda sprawdzająca, czy jest już zwycięzca gry */
-    public void szukajZwyciezcy()
-    {
+    public void szukajZwyciezcy() {
         for (Uczestnik uczestnik : uczestnicy) {
             /* dla wszystkich uczestników */
             if (uczestnik.podajWszystkiePunkty() > 99) {
@@ -110,25 +109,15 @@ class Gra {
     }
 
     /*Metoda zwracająca info czy są wolne miejsca */
-    public boolean czySaMiejsca()
-    {
+    public boolean czySaMiejsca() {
         if (podajIloscGraczy() < podajMaxIloscGraczy()) return true;
         else return false;
     }
 
-    public boolean czySaWszyscy()
-    {
+    public boolean czySaWszyscy() {
         if  (podajIloscGraczy() == podajMaxIloscGraczy()) return true;
         else return false;
     }
-
-
-
-
-
-
-
-
 
     /*Metoda zwracająca info czy jest zwycięzca */
     public boolean wskazCzyJestZwyciezca()
@@ -144,32 +133,37 @@ class Gra {
         if(aktualny==pierwszyWKolejce) szukajZwyciezcy();
         /* jeżeli nowy aktualny gracz jest pierwszy w kolejce, sprawdzamy, czy nie wyłonił się zwycięzca */
 
-        if (!wskazCzyJestZwyciezca()) {
-            /* jeżeli nie wyłonił się zwycięzca */
-            wyslijDoJednego(this.aktualny, "\n\nTWOJA KOLEJ!");
-            wyslijDoInnych(this.aktualny, "\n\nTeraz rzuca: " + "<" + this.aktualny.podajNick() + ">");
+        if (!wskazCzyJestZwyciezca() && podajIloscGraczy()>1) {
+            /* jeżeli nie wyłonił się zwycięzca i jest więcej niż jeden gracz*/
+            wyslijDoJednego(this.aktualny, YOUR_TURN_COMMAND);
+            wyslijDoInnych(this.aktualny, THROWS_COMMAND +  this.aktualny.podajNick());
         }
         else {
             /* jeżeli wyłonił się zwycięzca */
-            wyslijDoWszystkich( "\n\nGRA ZAKOŃCZONA!");
-            wyslijDoWszystkich(  "\n*****************");
-            wyslijDoWszystkich( "TABELA PUNKTÓW:");
 
-            for (Uczestnik gracz : uczestnicy) {
-                /*wyświetlamy punkty każdego gracza z listy graczy */
-
-                wyslijDoWszystkich(  "<"+ gracz.podajNick() + ">" +  ": " + gracz.podajWszystkiePunkty() + "pkt" );
+            Vector<Uczestnik> ostateczneWyniki = uczestnicy;
+            for (Uczestnik uczestnik : ostateczneWyniki) {
+            /*dla każdego z uczestników gry */
+                    for (Uczestnik gracz : ostateczneWyniki) {
+                    /*porównujemy jego punkty z każdym innym uczestnikiem gry */
+                        boolean przegrany = false; // zmienna przechowująca informację o przegranej gracza
+                        if (uczestnik.podajWszystkiePunkty() <= gracz.podajWszystkiePunkty()) {
+                        /*jeżeli gracz ma mniej punktów niż którykolwiek z innych graczy*/
+                            przegrany = true;
+                        }
+                        if (!przegrany) {
+                            wyslijDoJednego(uczestnik, YOU_WON_COMMAND); // wysłanie komendy jeżeli wygrał
+                        } else wyslijDoJednego(uczestnik, YOU_LOST_COMMAND); // wysłanie komendy jeżeli przegrał
+                    }
             }
-            wyslijDoWszystkich( "*****************");
-
         }
     }
 
     /* Metoda zakańczająca turę gracza */
     public synchronized void zakonczTure() {
-        wyslijDoWszystkich("*** koniec tury gracza <" + aktualny.podajNick() + "> ***");
+        wyslijDoWszystkich(END_TURN_COMMAND + aktualny.podajNick());
         aktualny.przyznajPunkty();
-                    /*dopisujemy graczowi punkty, które zdobył w turze */
+        /*dopisujemy graczowi punkty, które zdobył w turze */
         pokazPunkty();
         if ((uczestnicy.indexOf(aktualny) + 1 == uczestnicy.size())) {
                         /*jeżeli aktualny gracz jest ostatni w kolejce */
@@ -253,9 +247,9 @@ class Gra {
         StringBuilder lista = new StringBuilder();
 
         for (Uczestnik gracz : uczestnicy) {
-            lista.append("<"+ gracz.podajNick() + ">" +  ": " + gracz.podajWszystkiePunkty() + "pkt" + ",");
+            lista.append(gracz.podajNick() +  ": " + gracz.podajWszystkiePunkty() + "pkt" + ",");
         }
-        wyslijDoWszystkich("USERS:" + lista.toString());
+        wyslijDoWszystkich(USERS_LIST_COMMAND + lista.toString());
     }
 
     /* Metoda ustawiająca pierwszego gracza w kolejce */
@@ -320,8 +314,7 @@ class Rzut {
 
     /* Metoda wyświetlająca ułożenie rzuconych figurek */
     public void podajUlozenie() {
-        gra.wyslijDoWszystkich("Figurka 1 spadła na: " + ulozeniaFigurek[0]);
-        gra.wyslijDoWszystkich("Figurka 2 spadła na: " + ulozeniaFigurek[1]);
+        gra.wyslijDoWszystkich(RESULT_COMMAND + ulozeniaFigurek[0] + "-" +   ulozeniaFigurek[1]);
     }
 
     /* Metoda zwracająca ilość zdobytych w rzucie punktów*/
@@ -331,7 +324,7 @@ class Rzut {
             /* jeżeli figurki się nie stykają */
             if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
                 /*jeżeli na jednej figurce jest lewy a na drugiej prawy bok (albo odwrotnie */
-                gra.wyslijDoWszystkich("Zerowanie punktów w turze!\n\n");
+                gra.wyslijDoWszystkich(TURN_LOST_COMMAND);
                 pechowy = true;   // rzut oznaczamy jako pechowy (kończący turę)
                 gra.podajAktualnego().ustawPunktyWTurze(0); // zerujemy punkty w turze
             }
@@ -354,17 +347,16 @@ class Rzut {
 
                     }
                 }
-                gra.wyslijDoJednego(gra.podajAktualnego(), "\nZdobyłeś "  + punktywRzucie + " punktów!");
+                gra.wyslijDoJednego(gra.podajAktualnego(), GOT_POINTS_COMMAND  + punktywRzucie);
                 gra.podajAktualnego().ustawPunktyWTurze(gra.podajAktualnego().podajPunktyWTurze()+punktywRzucie);
                 /* dodanie  punktów w rzucie do punktów w turze */
 
-                gra.wyslijDoJednego(gra.podajAktualnego(), "\nPunkty w tej turze:" + gra.podajAktualnego().podajPunktyWTurze());
-                gra.wyslijDoInnych(gra.podajAktualnego(), "<" + gra.podajAktualnego().podajNick() + "> +"  + punktywRzucie + " punktów !");
+                gra.wyslijDoJednego(gra.podajAktualnego(), TURN_POINTS_COMMAND + gra.podajAktualnego().podajPunktyWTurze());
+                gra.wyslijDoInnych(gra.podajAktualnego(), ELSE_POINTS_COMMAND + gra.podajAktualnego().podajNick() + "-"  + punktywRzucie);
 
             }
         } else {  /*jeżeli figurki się stykały */
-            gra.wyslijDoWszystkich("Figurki stykają się!");
-            gra.wyslijDoWszystkich("Zerowanie wszystkich punktów!!\n\n");
+            gra.wyslijDoWszystkich(TOUCHING_COMMAND);
             pechowy = true; // rzut oznaczamy jako pechowy (kończący turę)
             gra.podajAktualnego().ustawPunktyWTurze(0);  // zerujemy punkty w turze
             gra.podajAktualnego().ustawWszystkiePunkty(0); // wszystkie punkty gracza również zerujemy
@@ -437,7 +429,7 @@ class Uczestnik extends Thread implements CzatProtokol{
         try {
             in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // definicja strumienia wejściowego
             out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true); // definicja strumienia wyjściowego
-            this.wyslijWiadomosc("Połączony z serwerem!");
+            this.wyslijWiadomosc(CONNECTED_COMMAND);
 
             if ((linia = in.readLine()).startsWith(NICK_COMMAND)){
                 nick = linia.substring(NICK_COMMAND.length()); // pobranie nicku od użytkownika
@@ -447,7 +439,7 @@ class Uczestnik extends Thread implements CzatProtokol{
                     gra.dodajUczestnika(this);
                     gra.pokazPunkty();
                     zalogowany = true;
-                    if (!gra.czySaWszyscy()) out.println("Czekaj na dołączenie wszystkich graczy!");
+                    if (!gra.czySaWszyscy()) this.wyslijWiadomosc("WAIT_COMMAND");
                     else {
                         int wylosowany = (int) (Math.random() * gra.podajMaxIloscGraczy() - 1);
                         gra.ustawPierwszego(gra.podajListeUczestnikow().get(wylosowany));
@@ -481,7 +473,6 @@ class Uczestnik extends Thread implements CzatProtokol{
                 }
             }
         } catch (IOException e) {
-            System.out.println("Gracz " + this.podajNick() + " stracił połączenie");
         }finally {
             try {
                 if (zalogowany) gra.opuscGre(this);

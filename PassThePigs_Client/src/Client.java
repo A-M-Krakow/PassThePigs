@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-public class Client extends JFrame {
+public class Client extends JFrame implements CzatProtokol {
 
     //GUI
     private JButton rzucaj, rezygnuj, polacz, rozlacz;
@@ -132,7 +132,6 @@ public class Client extends JFrame {
 
             try {
                 socket = new Socket(host.getText(), new Integer(port.getText()));
-                wyswietlKomunikat("Połączono.");
                 polaczony = true;
 
                 wejscie = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -178,21 +177,81 @@ public class Client extends JFrame {
         }
     }
 
-    private void wyswietlKomunikat(String tekst){
+    private void wyswietlKomunikat (String tekst){
 
-        if(tekst.startsWith("USERS:")){
+        if (tekst.startsWith(RESULT_COMMAND)) {
+            tekst = tekst.substring(RESULT_COMMAND.length());
+            String[] wyniki = tekst.split("-");
+            wyswietlKomunikat("\nFigurka 1 spadła na: " + wyniki[0] );
+            wyswietlKomunikat("Figurka 2 spadła na: " + wyniki[1]);
+        }
+        else if(tekst.equals(YOUR_TURN_COMMAND)){
             //Aktualizacja listy
-            StringTokenizer gracze = new StringTokenizer(tekst.substring("USERS:".length()), ",");
+            wyswietlKomunikat("\nTWOJA KOLEJ!\n");
+        }
 
+        else if(tekst.equals(TURN_LOST_COMMAND)){
+            //Aktualizacja listy
+            wyswietlKomunikat("\nZerowanie puktów w turze!\n");
+        }
+        else if (tekst.startsWith(GOT_POINTS_COMMAND)) {
+            wyswietlKomunikat("\nZdobyłeś " +  tekst.substring(GOT_POINTS_COMMAND.length()) + "punktów\n");
+        }
+
+        else if (tekst.startsWith(ELSE_POINTS_COMMAND)) {
+            tekst = tekst.substring(ELSE_POINTS_COMMAND.length());
+            String[] punkty = tekst.split("-");
+            wyswietlKomunikat("\n" +  punkty[0] + " +" + punkty[1] + " punktów" );
+        }
+        else if (tekst.startsWith(TURN_POINTS_COMMAND)) {
+            wyswietlKomunikat("\nPunkty w tej turze: " +  tekst.substring(TURN_POINTS_COMMAND.length()) + "\n");
+        }
+        else if(tekst.equals(TOUCHING_COMMAND)){
+            //Aktualizacja listy
+            wyswietlKomunikat("\nFigurki stykają się!");
+            wyswietlKomunikat("Zerowanie wszystkich punktów!\n");
+        }
+
+        else if (tekst.startsWith(THROWS_COMMAND)) {
+            wyswietlKomunikat("\nTeraz rzuca: " +  tekst.substring(THROWS_COMMAND.length()) + "\n");
+        }
+
+        else if (tekst.startsWith(END_TURN_COMMAND)) {
+            wyswietlKomunikat("\n***Koniec tury gracza: " +  tekst.substring(END_TURN_COMMAND.length()) + "*** \n");
+        }
+
+        else if(tekst.startsWith(USERS_LIST_COMMAND)){
+            //Aktualizacja listy
+            StringTokenizer gracze = new StringTokenizer(tekst.substring(USERS_LIST_COMMAND.length()), ",");
             listaZalogowanych.clear();
-
             int iloscOsob = gracze.countTokens();
             for(int i = 0; i < iloscOsob; i++) {
                 listaZalogowanych.add(i, gracze.nextToken());
             }
-
         }
 
+        else if(tekst.equals(YOU_WON_COMMAND)){
+            //Aktualizacja listy
+            JOptionPane.showMessageDialog(null, "WYGRAŁEŚ!");
+            rozlacz.doClick();
+        }
+
+        else if(tekst.equals(YOU_LOST_COMMAND)){
+            //Aktualizacja listy
+            JOptionPane.showMessageDialog(null, "PRZEGRAŁEŚ!");
+            rozlacz.doClick();
+        }
+
+        else if (tekst.startsWith(JOINED_COMMAND)) {
+            wyswietlKomunikat("\nDo gry dołączył: " +  tekst.substring(JOINED_COMMAND.length()) + "\n");
+        }
+
+        else if(tekst.equals(CONNECTED_COMMAND)){
+            wyswietlKomunikat("\nPołączony z serwerem\n");
+        }
+        else if (tekst.startsWith(WAIT_COMMAND)) {
+            wyswietlKomunikat("Czekaj na podłączenie wszystkich graczy!");
+        }
         else {
             komunikaty.append(tekst + "\n");
             komunikaty.setCaretPosition(komunikaty.getDocument().getLength());
