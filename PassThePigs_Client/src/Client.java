@@ -35,7 +35,6 @@ public class Client extends JFrame implements PtpProtocol {
         komunikaty.setLineWrap(true);
         komunikaty.setEditable(false);
 
-        wiadomosc = new JTextField();
         rzucaj = new JButton("Rzucaj");
         rezygnuj = new JButton("Rezygnuj");
         host = new JTextField(nazwaSerwera ,12);
@@ -169,7 +168,6 @@ public class Client extends JFrame implements PtpProtocol {
 
         public void wyslij(String tekst) {
             wyjscie.println(tekst);
-            wiadomosc.setText("");
         }
     }
 

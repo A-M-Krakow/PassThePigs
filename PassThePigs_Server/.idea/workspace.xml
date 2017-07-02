@@ -19,7 +19,7 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="-897">
               <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -37,115 +37,6 @@
                 <element signature="class#Uczestnik#0;class#Server#0" expanded="false" />
                 <element signature="method#run#0;class#Uczestnik#0;class#Server#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JAVA/Server" pinned="false" current-in-tab="false">
-        <entry file="uml://JAVA/Server">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>JAVA</ID>
-              <OriginalElement>Server</OriginalElement>
-              <nodes>
-                <node x="0.0" y="79.0">PtpProtocol</node>
-                <node x="138.75416666666666" y="79.0">Server.Gra</node>
-                <node x="124.42083333333332" y="0.0">Server.Rzut</node>
-                <node x="92.47083333333333" y="158.0">Server</node>
-                <node x="113.38750000000002" y="237.0">Server.Uczestnik</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="Server.Uczestnik" target="Server.Gra">
-                  <point x="24.500000000000004" y="-14.5" />
-                  <point x="186.88750000000002" y="217.0" />
-                  <point x="193.9708333333333" y="217.0" />
-                  <point x="193.9708333333333" y="138.0" />
-                  <point x="188.25416666666666" y="138.0" />
-                  <point x="16.5" y="14.5" />
-                </edge>
-                <edge source="Server" target="PtpProtocol">
-                  <point x="-32.000000000000014" y="-14.5" />
-                  <point x="100.47083333333332" y="138.0" />
-                  <point x="83.25" y="138.0" />
-                  <point x="27.75" y="14.5" />
-                </edge>
-                <edge source="Server.Uczestnik" target="PtpProtocol">
-                  <point x="-40.83333333333333" y="-14.5" />
-                  <point x="121.55416666666669" y="217.0" />
-                  <point x="27.75" y="217.0" />
-                  <point x="-27.75" y="14.5" />
-                </edge>
-                <edge source="Server" target="Server.Uczestnik">
-                  <point x="20.0" y="14.5" />
-                  <point x="152.47083333333333" y="217.0" />
-                  <point x="154.22083333333333" y="217.0" />
-                  <point x="-8.166666666666686" y="-14.5" />
-                </edge>
-                <edge source="Server.Rzut" target="Server">
-                  <point x="-23.666666666666657" y="14.5" />
-                  <point x="136.25416666666666" y="54.0" />
-                  <point x="121.5" y="54.0" />
-                  <point x="121.5" y="138.0" />
-                  <point x="116.47083333333332" y="138.0" />
-                  <point x="-16.000000000000014" y="-14.5" />
-                </edge>
-                <edge source="Server.Uczestnik" target="Server">
-                  <point x="-24.5" y="-14.5" />
-                  <point x="137.88750000000002" y="207.0" />
-                  <point x="112.47083333333333" y="207.0" />
-                  <point x="-20.0" y="14.5" />
-                </edge>
-                <edge source="Server.Gra" target="Server.Uczestnik">
-                  <point x="5.5" y="14.5" />
-                  <point x="177.25416666666666" y="138.0" />
-                  <point x="182.9708333333333" y="138.0" />
-                  <point x="182.9708333333333" y="207.0" />
-                  <point x="170.55416666666667" y="207.0" />
-                  <point x="8.166666666666657" y="-14.5" />
-                </edge>
-                <edge source="Server.Gra" target="Server">
-                  <point x="-5.5" y="14.5" />
-                  <point x="166.25416666666666" y="138.0" />
-                  <point x="164.4708333333333" y="138.0" />
-                  <point x="31.999999999999986" y="-14.5" />
-                </edge>
-                <edge source="Server.Gra" target="Server.Rzut">
-                  <point x="-16.5" y="-14.5" />
-                  <point x="155.25416666666666" y="54.0" />
-                  <point x="159.92083333333332" y="54.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="Server.Rzut" target="Server.Gra">
-                  <point x="23.666666666666657" y="14.5" />
-                  <point x="183.58749999999998" y="54.0" />
-                  <point x="188.25416666666666" y="54.0" />
-                  <point x="16.5" y="-14.5" />
-                </edge>
-                <edge source="Server" target="Server.Gra">
-                  <point x="15.999999999999986" y="-14.5" />
-                  <point x="148.4708333333333" y="138.0" />
-                  <point x="155.25416666666666" y="138.0" />
-                  <point x="-16.5" y="14.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.122506619593998" x="-117.192797609687" y="138.807202390313" />
-              <SelectedNodes />
-              <Categories>
-                <Category>Inner Classes</Category>
-              </Categories>
-              <SCOPE>All</SCOPE>
-              <VISIBILITY>private</VISIBILITY>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PtpProtocol.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PtpProtocol.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -272,7 +163,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -728,15 +619,15 @@
       <workItem from="1498934647591" duration="1489000" />
       <workItem from="1498936330631" duration="351000" />
       <workItem from="1498938289674" duration="4355000" />
-      <workItem from="1498980946817" duration="3947000" />
+      <workItem from="1498980946817" duration="6465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131611000" />
+    <option name="totallyTimeSpent" value="134129000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1378" height="754" extended-state="1" />
+    <frame x="-8" y="-8" width="1378" height="754" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -748,7 +639,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30279502" sideWeight="0.50587374" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.51552796" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36956522" sideWeight="0.4941263" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1295,7 +1186,7 @@
     <entry file="file://$PROJECT_DIR$/src/PtpProtocol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
+          <caret line="20" column="1" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1306,91 +1197,20 @@
           <ID>JAVA</ID>
           <OriginalElement>Server</OriginalElement>
           <nodes>
-            <node x="0.0" y="79.0">PtpProtocol</node>
-            <node x="138.75416666666666" y="79.0">Server.Gra</node>
-            <node x="124.42083333333332" y="0.0">Server.Rzut</node>
-            <node x="92.47083333333333" y="158.0">Server</node>
-            <node x="113.38750000000002" y="237.0">Server.Uczestnik</node>
+            <node x="" y="">PtpProtocol</node>
+            <node x="" y="">Server.Gra</node>
+            <node x="" y="">Server.Rzut</node>
+            <node x="" y="">Server</node>
+            <node x="" y="">Server.Uczestnik</node>
           </nodes>
           <notes />
-          <edges>
-            <edge source="Server.Uczestnik" target="Server.Gra">
-              <point x="24.500000000000004" y="-14.5" />
-              <point x="186.88750000000002" y="217.0" />
-              <point x="193.9708333333333" y="217.0" />
-              <point x="193.9708333333333" y="138.0" />
-              <point x="188.25416666666666" y="138.0" />
-              <point x="16.5" y="14.5" />
-            </edge>
-            <edge source="Server" target="PtpProtocol">
-              <point x="-32.000000000000014" y="-14.5" />
-              <point x="100.47083333333332" y="138.0" />
-              <point x="83.25" y="138.0" />
-              <point x="27.75" y="14.5" />
-            </edge>
-            <edge source="Server.Uczestnik" target="PtpProtocol">
-              <point x="-40.83333333333333" y="-14.5" />
-              <point x="121.55416666666669" y="217.0" />
-              <point x="27.75" y="217.0" />
-              <point x="-27.75" y="14.5" />
-            </edge>
-            <edge source="Server" target="Server.Uczestnik">
-              <point x="20.0" y="14.5" />
-              <point x="152.47083333333333" y="217.0" />
-              <point x="154.22083333333333" y="217.0" />
-              <point x="-8.166666666666686" y="-14.5" />
-            </edge>
-            <edge source="Server.Rzut" target="Server">
-              <point x="-23.666666666666657" y="14.5" />
-              <point x="136.25416666666666" y="54.0" />
-              <point x="121.5" y="54.0" />
-              <point x="121.5" y="138.0" />
-              <point x="116.47083333333332" y="138.0" />
-              <point x="-16.000000000000014" y="-14.5" />
-            </edge>
-            <edge source="Server.Uczestnik" target="Server">
-              <point x="-24.5" y="-14.5" />
-              <point x="137.88750000000002" y="207.0" />
-              <point x="112.47083333333333" y="207.0" />
-              <point x="-20.0" y="14.5" />
-            </edge>
-            <edge source="Server.Gra" target="Server.Uczestnik">
-              <point x="5.5" y="14.5" />
-              <point x="177.25416666666666" y="138.0" />
-              <point x="182.9708333333333" y="138.0" />
-              <point x="182.9708333333333" y="207.0" />
-              <point x="170.55416666666667" y="207.0" />
-              <point x="8.166666666666657" y="-14.5" />
-            </edge>
-            <edge source="Server.Gra" target="Server">
-              <point x="-5.5" y="14.5" />
-              <point x="166.25416666666666" y="138.0" />
-              <point x="164.4708333333333" y="138.0" />
-              <point x="31.999999999999986" y="-14.5" />
-            </edge>
-            <edge source="Server.Gra" target="Server.Rzut">
-              <point x="-16.5" y="-14.5" />
-              <point x="155.25416666666666" y="54.0" />
-              <point x="159.92083333333332" y="54.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="Server.Rzut" target="Server.Gra">
-              <point x="23.666666666666657" y="14.5" />
-              <point x="183.58749999999998" y="54.0" />
-              <point x="188.25416666666666" y="54.0" />
-              <point x="16.5" y="-14.5" />
-            </edge>
-            <edge source="Server" target="Server.Gra">
-              <point x="15.999999999999986" y="-14.5" />
-              <point x="148.4708333333333" y="138.0" />
-              <point x="155.25416666666666" y="138.0" />
-              <point x="-16.5" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.122506619593998" x="-117.192797609687" y="138.807202390313" />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.5225066195939979" x="387.05827702702777" y="375.7516891891894" />
           <SelectedNodes />
           <Categories>
             <Category>Inner Classes</Category>
+            <Category>Methods</Category>
+            <Category>Fields</Category>
           </Categories>
           <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
@@ -1399,7 +1219,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="-897">
           <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
