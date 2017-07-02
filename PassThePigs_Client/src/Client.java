@@ -25,7 +25,7 @@ public class Client extends JFrame implements PtpProtocol {
     private Klient watekKlienta;
 
     public Client(){
-        super("Klient");
+        super("Pass  The Pigs Client");
         setSize(600, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -40,7 +40,7 @@ public class Client extends JFrame implements PtpProtocol {
         rzucaj = new JButton("Rzucaj");
         rezygnuj = new JButton("Rezygnuj");
         host = new JTextField(nazwaSerwera ,12);
-        port = new JTextField((new Integer(numerPortu)).toString() ,8);
+        port = new JTextField("" ,8);
         polacz = new JButton("Połącz");
         rozlacz = new JButton("Rozłącz");
         rozlacz.setEnabled(false);
@@ -110,6 +110,8 @@ public class Client extends JFrame implements PtpProtocol {
             }
             if (e.getActionCommand().equals("Rezygnuj")) {
                 watekKlienta.wyslij(RESIGN_COMMAND);
+                rezygnuj.setEnabled(false);
+                rzucaj.setEnabled(false);
             }
 
         }
@@ -177,6 +179,7 @@ public class Client extends JFrame implements PtpProtocol {
             komunikaty.append(tekst.substring(MESSAGE_PREFIX.length()) + "\n");
             komunikaty.setCaretPosition(komunikaty.getDocument().getLength());
         }
+
         else if (tekst.startsWith(RESULT_COMMAND)) {
             tekst = tekst.substring(RESULT_COMMAND.length());
             String[] wyniki = tekst.split("-");
@@ -186,6 +189,12 @@ public class Client extends JFrame implements PtpProtocol {
         else if(tekst.equals(YOUR_TURN_COMMAND)){
             //Aktualizacja listy
             obsluzKomunikat(MESSAGE_PREFIX +"\nTWOJA KOLEJ!\n");
+            rezygnuj.setEnabled(true);
+            rzucaj.setEnabled(true);
+        }
+        else if(tekst.equals(BAD_LUCK_COMMAND)){
+            rezygnuj.setEnabled(false);
+            rzucaj.setEnabled(false);
         }
 
         else if(tekst.equals(TURN_LOST_COMMAND)){
@@ -245,6 +254,8 @@ public class Client extends JFrame implements PtpProtocol {
 
         else if(tekst.equals(CONNECTED_COMMAND)){
             obsluzKomunikat(MESSAGE_PREFIX +"\nPołączony z serwerem\n");
+            rezygnuj.setEnabled(false);
+            rzucaj.setEnabled(false);
         }
         else if (tekst.startsWith(WAIT_COMMAND)) {
             obsluzKomunikat(MESSAGE_PREFIX + "Czekaj na podłączenie wszystkich graczy!");

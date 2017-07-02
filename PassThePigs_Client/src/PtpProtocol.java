@@ -17,4 +17,5 @@ public interface PtpProtocol {
    public static final String TURN_POINTS_COMMAND= "TURN_POINTS:";
    public static final String TOUCHING_COMMAND= "TOUCHING";
    public static final String CONNECTED_COMMAND= "CONNECTED";
+   public static final String BAD_LUCK_COMMAND= "BAD_LUCK";
 }

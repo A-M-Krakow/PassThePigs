@@ -10,18 +10,29 @@ import java.util.Vector;
  */
 public class Server implements PtpProtocol{
     private static ServerSocket server; // deklaracja zmiennej przechowującej socket na którym nasłuchuje serwer
-    private static final int PORT = 23; // definicja portu, na którym nasłuchuje serwer
+    private static int port; // definicja portu, na którym nasłuchuje serwer
     private int maxIloscGraczy = 0;   // definicja zmiennej przechowującej ilość graczy na początkowe 0
     private Gra gra;
 
 
     public Server() {
+        wprowadzNumerPortu();
         wprowadzIloscGraczy();
         this.gra = new Gra(maxIloscGraczy);
         ustanowPolaczenie();
         /* Utworzenie nowej gry */
     }
 
+    private void wprowadzNumerPortu() {
+        while (port < 1 || port > 65535)                  // dopóki numer portu nie będzie prawidłowym numerem portu
+        {
+            System.out.print("Podaj numer portu: ");  // serwer prosi o jego wprowadzenie
+            Scanner sc = new Scanner(System.in);
+            if (sc.hasNextInt())
+                port = sc.nextInt();        //dopisywanie liczby do zmiennej maxIloscGraczy jeśli jest liczbą całkowitą
+        }
+        this.port = port;
+    }
     private void wprowadzIloscGraczy() {
         while (maxIloscGraczy < 2 || maxIloscGraczy > 5)                  // dopóki ilość graczy nie będzie z zakresu 2 do 5
         {
@@ -34,8 +45,8 @@ public class Server implements PtpProtocol{
     }
     private void ustanowPolaczenie() {
         try {
-            server = new ServerSocket(PORT); // definicja socketu serwera na odpowiednim porcie
-            System.out.println("Serwer gry uruchomiony na porcie: " + PORT);
+            server = new ServerSocket(port); // definicja socketu serwera na odpowiednim porcie
+            System.out.println("Serwer gry uruchomiony na porcie: " + port);
 
             while (true) {
                 Socket socket = server.accept(); // włączenie akceptowania nowego połączenia
@@ -52,7 +63,7 @@ public class Server implements PtpProtocol{
 
 
 
-/*Obiekty klasy Gra to gry uruchomione na serwerze (w przyszłości będzie mogło być ich więcej niż jedna) */
+/*Obiekty klasy Gra to gra uruchomiona na serwerze*/
 class Gra {
     private Vector<Uczestnik> uczestnicy = new Vector<>(); // definicja zmiennej przechowującej wszystkich uczestnikow gry
     private Uczestnik aktualny = null; // deklaracja uczestnika, który gra w danym momencie
@@ -304,7 +315,7 @@ class Rzut {
         }
 
         losowanie = (int) (Math.random() * 100); // losujemy, czy figurki się stykają
-        if (losowanie >= 0 && losowanie < 10) stykajaSie = true;
+        if (losowanie >= 0 && losowanie < 20) stykajaSie = true;
 
     }
 
@@ -326,6 +337,7 @@ class Rzut {
             if ( (ulozeniaFigurek[0].equals(mozliweUlozenia[4]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[5]))) || (ulozeniaFigurek[0].equals(mozliweUlozenia[5]) && (ulozeniaFigurek[1].equals(mozliweUlozenia[4])))) {
                 /*jeżeli na jednej figurce jest lewy a na drugiej prawy bok (albo odwrotnie */
                 gra.wyslijDoWszystkich(TURN_LOST_COMMAND);
+                gra.wyslijDoJednego(gra.podajAktualnego(), BAD_LUCK_COMMAND);
                 pechowy = true;   // rzut oznaczamy jako pechowy (kończący turę)
                 gra.podajAktualnego().ustawPunktyWTurze(0); // zerujemy punkty w turze
             }
@@ -358,6 +370,7 @@ class Rzut {
             }
         } else {  /*jeżeli figurki się stykały */
             gra.wyslijDoWszystkich(TOUCHING_COMMAND);
+            gra.wyslijDoJednego(gra.podajAktualnego(), BAD_LUCK_COMMAND);
             pechowy = true; // rzut oznaczamy jako pechowy (kończący turę)
             gra.podajAktualnego().ustawPunktyWTurze(0);  // zerujemy punkty w turze
             gra.podajAktualnego().ustawWszystkiePunkty(0); // wszystkie punkty gracza również zerujemy
@@ -369,7 +382,7 @@ class Rzut {
 /*Obiekty klasy Uczestnik to gracze podłączeni do serwera gry */
 class Uczestnik extends Thread implements PtpProtocol{
     private Gra gra; // deklaracja gry, w której bierze udział uczestnik
-    private String linia; // deklaracja napisu wpisanego przez użytkownika
+    private String linia; // deklaracja komunikatu od użytkownika
     private int wszystkiePunkty = 0;  // wszystkie punkty gracza
     private int punktyWTurze = 0;     // punkty gracza w aktualnej turze
     private Socket socket; // deklaracja socketu dla połączenia z uczestnikiem
