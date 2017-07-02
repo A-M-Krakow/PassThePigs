@@ -19,7 +19,6 @@ public class Client extends JFrame implements PtpProtocol {
 
     //Klient
     private String nazwaSerwera = "localhost";
-    private int numerPortu = 23;
     private boolean polaczony = false;
     private boolean zalogowany = false;
     private Klient watekKlienta;
@@ -40,7 +39,7 @@ public class Client extends JFrame implements PtpProtocol {
         rzucaj = new JButton("Rzucaj");
         rezygnuj = new JButton("Rezygnuj");
         host = new JTextField(nazwaSerwera ,12);
-        port = new JTextField("" ,8);
+        port = new JTextField("23" ,8);
         polacz = new JButton("Połącz");
         rozlacz = new JButton("Rozłącz");
         rozlacz.setEnabled(false);
@@ -87,7 +86,7 @@ public class Client extends JFrame implements PtpProtocol {
         public void actionPerformed(ActionEvent e) {
 
             if (e.getActionCommand().equals("Połącz")) {
-                obsluzKomunikat(MESSAGE_PREFIX + "Łączę z: " + nazwaSerwera + " na porcie: " + numerPortu + "...");
+                obsluzKomunikat(MESSAGE_PREFIX + "Łączę z: " + nazwaSerwera + " na porcie: " + new Integer(port.getText()) + "...");
                 polacz.setEnabled(false);
                 rozlacz.setEnabled(true);
                 host.setEnabled(false);
@@ -157,6 +156,7 @@ public class Client extends JFrame implements PtpProtocol {
             }finally {
                 try {
                     if (polaczony) {
+                        rozlacz.doClick();
                         wejscie.close(); // zamknięcie wejścia
                         wyjscie.close(); // zamknięcie wyjścia
                         socket.close(); // zamknięcie socketu
